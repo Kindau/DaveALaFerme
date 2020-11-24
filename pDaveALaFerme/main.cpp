@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 int main()
 {
-    //Je suis un Comm de louis
+    //Je suis un Comm de louis et Audrey
     sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
