@@ -1,4 +1,13 @@
 #include <SFML/Graphics.hpp>
+#include <iostream>
+
+//Import des classes
+
+#include <Market.h>
+#include <Path.h>
+#include <Tile.h>
+
+using namespace std;
 int main()
 {
     //Je suis un Comm de louis et Audrey et Mel
@@ -19,5 +28,15 @@ int main()
         window.draw(shape);
         window.display();
     }
+
+    cout<<"Test construction des objects ! : "<<endl;
+
+    Market market(0,0);
+    Path path(0,0);
+    Tile tile(0,0);
+
+    cout <<"Si ceci s'affiche c'est que la construction est ok ! "<<endl;
+
+
     return 0;
 }
