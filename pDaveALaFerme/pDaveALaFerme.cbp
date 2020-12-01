@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add library="../SFML-2.5.1-linux/lib/libsfml-graphics.so" />
@@ -27,6 +28,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -44,7 +46,27 @@
 		<Linker>
 			<Add directory="../SFML-2.5.1-linux/lib" />
 		</Linker>
+		<Unit filename="include/GameObject.h" />
+		<Unit filename="include/Ground.h" />
+		<Unit filename="include/IObserver.h" />
+		<Unit filename="include/ISubject.h" />
+		<Unit filename="include/Market.h" />
+		<Unit filename="include/Mover.h" />
+		<Unit filename="include/Path.h" />
+		<Unit filename="include/Player.h" />
+		<Unit filename="include/Tile.h" />
+		<Unit filename="include/Wallet.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/GameObject.cpp" />
+		<Unit filename="src/Ground.cpp" />
+		<Unit filename="src/IObserver.cpp" />
+		<Unit filename="src/ISubject.cpp" />
+		<Unit filename="src/Market.cpp" />
+		<Unit filename="src/Mover.cpp" />
+		<Unit filename="src/Path.cpp" />
+		<Unit filename="src/Player.cpp" />
+		<Unit filename="src/Tile.cpp" />
+		<Unit filename="src/Wallet.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
