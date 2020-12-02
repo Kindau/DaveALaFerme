@@ -65,6 +65,15 @@ int main()
     cout<<player.str()<<endl;
 
 
+    cout<<"\ntest state: "<<endl;
+    Tile tileTestState(2,2);
+
+    tileTestState.handle();
+    tileTestState.handle();
+    tileTestState.handle();
+    tileTestState.handle();
+    tileTestState.handle();
+    tileTestState.handle();
 
     return 0;
 }

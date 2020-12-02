@@ -1,13 +1,14 @@
 #include "Tile.h"
+#include "EmptyTile.h"
 
 Tile::Tile(int _x,int _y):Ground(_x,_y)
 {
-    //ctor
+    _state = new EmptyTile(this);
 }
 
 Tile::~Tile()
 {
-    //dtor
+
 }
 
 Tile::Tile(const Tile& other):Ground(other)
@@ -31,3 +32,12 @@ void Tile::update(const string &str){
 
 }
 
+void Tile::setState(StateTile* state)
+{
+    _state = state;
+}
+
+void Tile::handle()
+{
+    _state->handle();
+}

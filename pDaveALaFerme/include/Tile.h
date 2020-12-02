@@ -5,9 +5,14 @@
 
 #include <Ground.h>
 #include <ISubject.h>
-//                         Implémente l'interface IObserver
-class Tile : public Ground,public IObserver
+#include "StateTile.h"
+
+//                          Implémente l'interface IObserver
+class Tile : public Ground, public IObserver
 {
+    private:
+        StateTile* _state;
+
     public:
         Tile(int x =0,int y = 0);
         virtual ~Tile();
@@ -17,11 +22,9 @@ class Tile : public Ground,public IObserver
 
         void update(const string &message_from_subject);
 
-
-
-    protected:
-
-    private:
+        Tile();
+        void setState(StateTile* state);
+        void handle();
 };
 
 #endif // TILE_H
