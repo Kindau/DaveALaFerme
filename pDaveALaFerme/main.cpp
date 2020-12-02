@@ -66,14 +66,36 @@ int main()
 
 
     cout<<"\ntest state: "<<endl;
-    Tile tileTestState(2,2);
+    Tile tileTestState(2,2,2);
+
+    cout<<tileTestState.getGrowingTime()<<endl;
 
     tileTestState.handle();
+    cout<<tileTestState.getGrowingTime()<<endl;
     tileTestState.handle();
+    cout<<tileTestState.getGrowingTime()<<endl;
     tileTestState.handle();
+    cout<<tileTestState.getGrowingTime()<<endl;
     tileTestState.handle();
+    cout<<tileTestState.getGrowingTime()<<endl;
     tileTestState.handle();
+    cout<<tileTestState.getGrowingTime()<<endl;
     tileTestState.handle();
+    cout<<tileTestState.getGrowingTime()<<endl;
+    tileTestState.handle();
+    cout<<tileTestState.getGrowingTime()<<endl;
+    tileTestState.handle();
+    cout<<tileTestState.getGrowingTime()<<endl;
+    tileTestState.handle();
+    cout<<tileTestState.getGrowingTime()<<endl;
+    tileTestState.handle();
+    cout<<tileTestState.getGrowingTime()<<endl;
+    tileTestState.handle();
+    cout<<tileTestState.getGrowingTime()<<endl;
+    tileTestState.handle();
+    cout<<tileTestState.getGrowingTime()<<endl;
+    tileTestState.handle();
+    cout<<tileTestState.getGrowingTime()<<endl;
 
     return 0;
 }

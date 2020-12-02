@@ -35,5 +35,5 @@ PlowedTile& PlowedTile::operator=(const PlowedTile& rhs)
 void PlowedTile::handle()
 {
     printf("plowed\n");
-    _tile->setState(new PlantedTile(_tile, 0)); // faire ref à la variable dans seed (timetogrow)
+    _tile->setState(new PlantedTile(_tile));
 }

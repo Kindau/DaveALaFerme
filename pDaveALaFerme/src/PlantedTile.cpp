@@ -1,7 +1,7 @@
 #include "PlantedTile.h"
 
 // CONSTRUCTEUR
-PlantedTile::PlantedTile(Tile* tile, int growingTime): _tile(tile), _growingTime(growingTime)
+PlantedTile::PlantedTile(Tile* tile): _tile(tile)
 {
     //ctor
 }
@@ -19,7 +19,6 @@ PlantedTile::~PlantedTile()
 PlantedTile::PlantedTile(const PlantedTile& other)
 {
     _tile = other._tile;
-    _growingTime = other._growingTime;
 }
 
 // OPERATEUR D'AFFECTATION
@@ -28,31 +27,24 @@ PlantedTile& PlantedTile::operator=(const PlantedTile& rhs)
     if (this != &rhs)
     {
         _tile = rhs._tile;
-        _growingTime = rhs._growingTime;
     }
     return *this;
 }
 // =========================================================================================
 
-// GETTERS & SETTER
-int PlantedTile::getGrowingTime()const
-{
-    return _growingTime;
-}
-
-void PlantedTile::setGrowingTime(int time)
-{
-    _growingTime = time;
-}
-
+// STATE PATTERN METHOD
 void PlantedTile::handle()
 {
     printf("planted\n");
-    if (_growingTime >= 1)
+
+    if (_tile->getGrowingTime() > 0)
     {
-        _growingTime = _growingTime - 1;
+        _tile->setGrowingTime(_tile->getGrowingTime()-1);
         _tile->setState(new SprinkledTile(_tile));
     }
-    _growingTime = 10;
-    _tile->setState(new GrownTile(_tile));
+    else
+    {
+        _tile->setGrowingTime(10);
+        _tile->setState(new GrownTile(_tile));
+    }
 }

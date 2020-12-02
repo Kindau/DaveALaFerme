@@ -10,7 +10,6 @@ class PlantedTile : public StateTile
 {
     private:
         Tile* _tile;
-        int _growingTime;
 
     public:
         // ================================================================
@@ -26,9 +25,7 @@ class PlantedTile : public StateTile
             PlantedTile& operator=(const PlantedTile& other);
         // ================================================================
 
-        PlantedTile(Tile* tile, int growingTime=10);
-        int getGrowingTime()const;
-        void setGrowingTime(int time);
+        PlantedTile(Tile* tile);
 
         void handle();
 };
