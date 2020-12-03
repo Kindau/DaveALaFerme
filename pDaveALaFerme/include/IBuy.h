@@ -2,7 +2,7 @@
 #define IBUY_H
 #include <string>
 
-/*
+
 class IBuy
 {
     private:
@@ -14,6 +14,8 @@ class IBuy
         IBuy(const IBuy& other);
         IBuy& operator=(const IBuy& other);
 
-};*/
+        virtual void buy(const string &message_from_subject) = 0;
+
+};
 
 #endif // IBUY_H

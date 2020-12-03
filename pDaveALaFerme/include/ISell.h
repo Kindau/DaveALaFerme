@@ -4,7 +4,7 @@
 
 using std::string;
 
-/*
+
 class ISell
 {
     private:
@@ -16,7 +16,7 @@ class ISell
         ISell(const ISell& other);
         ISell& operator=(const ISell& other);
 
-
-};*/
+        virtual void sell(const string &message_from_subject) = 0;
+};
 
 #endif // ISELL_H

@@ -1,5 +1,5 @@
 #include "ISell.h"
-/*
+
 ISell::ISell(int price):price(price)
 {
     //ctor
@@ -23,4 +23,4 @@ ISell& ISell::operator=(const ISell& rhs)
     }
 
     return *this;
-}*/
+}

@@ -1,5 +1,5 @@
 #include "IBuy.h"
-/*
+
 IBuy::IBuy(int price):price(price)
 {
     //ctor
@@ -23,4 +23,4 @@ IBuy& IBuy::operator=(const IBuy& rhs)
     }
 
     return *this;
-}*/
+}
