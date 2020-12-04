@@ -1,6 +1,6 @@
 #include "ISell.h"
 
-ISell::ISell(int price):price(price)
+ISell::ISell()
 {
     //ctor
 }

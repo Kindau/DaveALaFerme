@@ -1,15 +1,20 @@
 #ifndef SEED_H
 #define SEED_H
 #include "Item.h"
+#include <string>
+
+using std::string;
+using std::to_string;
 
 class Seed: public Item
 {
     private:
         //Season plantingTime ;
         int timeToGrow ;
+        int price ;
 
     public:
-        Seed(int id,  const std::string nom, int timeToGrow);// Season plantingTime,
+        Seed(int id, string nom, int timeToGrow, int price);// Season plantingTime,
         virtual ~Seed();
         Seed(const Seed& other);
         Seed& operator=(const Seed& other);

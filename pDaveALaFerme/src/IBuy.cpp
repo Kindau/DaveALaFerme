@@ -1,6 +1,6 @@
 #include "IBuy.h"
 
-IBuy::IBuy(int price):price(price)
+IBuy::IBuy()
 {
     //ctor
 }
