@@ -2,7 +2,7 @@
 #define IBUY_H
 #include <string>
 
-
+using std::string;
 class IBuy
 {
     private:
