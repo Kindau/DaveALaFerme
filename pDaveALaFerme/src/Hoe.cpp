@@ -1,6 +1,6 @@
 #include "Hoe.h"
 
-Hoe::Hoe(int id, const std::string nom):Item(id, nom)
+Hoe::Hoe(int id, const std::string nom):Tool(id, nom)
 {
     //ctor
 }
@@ -10,7 +10,7 @@ Hoe::~Hoe()
     //dtor
 }
 
-Hoe::Hoe(const Hoe &hoe):Item(hoe)
+Hoe::Hoe(const Hoe &hoe):Tool(hoe)
 {
 
 }
@@ -18,7 +18,7 @@ Hoe::Hoe(const Hoe &hoe):Item(hoe)
 Hoe& Hoe::operator=(const Hoe& rhs)
 {
     if (this != &rhs) {
-        Item::operator=(rhs);
+        Tool::operator=(rhs);
     }
 
     return *this;

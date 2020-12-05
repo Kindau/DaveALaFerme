@@ -1,6 +1,6 @@
 #include "Haverst.h"
 
-Haverst::Haverst(int id, string nom, int price):Item(id, nom), price
+Haverst::Haverst(int id, string nom, int price):Item(id, nom), price(price)
 {
     //ctor
 }
@@ -12,7 +12,7 @@ Haverst::~Haverst()
 
 Haverst::Haverst(const Haverst &harvest):Item(harvest)
 {
-    price = seed.price ;
+    price = harvest.price ;
 }
 
 Haverst& Haverst::operator=(const Haverst& rhs)
@@ -23,5 +23,11 @@ Haverst& Haverst::operator=(const Haverst& rhs)
     }
 
     return *this;
+}
+
+string Haverst::str()const{
+    string rtn = Item::str();
+    rtn += " "+ to_string(price);
+    return rtn;
 }
 

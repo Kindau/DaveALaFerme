@@ -31,3 +31,10 @@ Home& Home::operator=(const Home& rhs)
     return *this;
 }
 // =========================================================================================
+
+
+
+
+string Home::str()const{
+    return "^";
+}

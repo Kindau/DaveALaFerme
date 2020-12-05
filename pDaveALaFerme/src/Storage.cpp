@@ -31,3 +31,9 @@ Storage& Storage::operator=(const Storage& rhs)
     return *this;
 }
 // =========================================================================================
+
+
+
+string Storage::str()const{
+    return "B";
+}

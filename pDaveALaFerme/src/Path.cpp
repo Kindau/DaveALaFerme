@@ -24,3 +24,16 @@ Path& Path::operator=(const Path& rhs)
     }
     return *this;
 }
+
+
+Ground* Path::clone()const{
+    int x = Ground::getX();
+    int y = Ground::getY();
+
+    return new Path(x,y);
+}
+
+
+string Path::str()const{
+    return "*";
+}

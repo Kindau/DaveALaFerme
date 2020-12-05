@@ -32,3 +32,17 @@ Market& Market::operator=(const Market& rhs)
 void Market::sellItems(){
     //TODO DEFINE
 }
+
+
+
+
+Ground* Market::clone()const{
+    int x = Ground::getX();
+    int y = Ground::getY();
+
+    return new Market(x,y);
+}
+
+string Market::str()const{
+    return "$";
+}

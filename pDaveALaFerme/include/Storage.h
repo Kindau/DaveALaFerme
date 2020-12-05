@@ -21,6 +21,12 @@ class Storage : public Ground
         // ================================================================
 
         Storage(int x =0,int y = 0);
+
+        string str()const;
+        Ground* clone()const{
+            return new Storage(*this);
+        }
+
 };
 
 #endif // STORAGE_H

@@ -12,13 +12,13 @@ class Haverst: public Item
         int price ;
 
     public:
-        Haverst(int id, string nom);
+        Haverst(int id, string nom,int price);
         virtual ~Haverst();
         Haverst(const Haverst& other);
         Haverst& operator=(const Haverst& other);
         Haverst* clone() const{return new Haverst(*this);};
 
-        string str() const;
+        string str()const;
 
 
 };

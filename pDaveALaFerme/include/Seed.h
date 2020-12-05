@@ -2,6 +2,7 @@
 #define SEED_H
 #include "Item.h"
 #include <string>
+#include <Season.h>
 
 using std::string;
 using std::to_string;
@@ -9,12 +10,12 @@ using std::to_string;
 class Seed: public Item
 {
     private:
-        //Season plantingTime ;
+        Season* plantingTime ;
         int timeToGrow ;
         int price ;
 
     public:
-        Seed(int id, string nom, int timeToGrow, int price);// Season plantingTime,
+        Seed(int id, string nom,Season* season,int timeToGrow, int price);
         virtual ~Seed();
         Seed(const Seed& other);
         Seed& operator=(const Seed& other);

@@ -28,9 +28,12 @@ Item& Item::operator=(const Item& rhs)
 }
 
 string Item::str() const {
-    //return "item : "+to_string()
+    return "item : "+to_string(id) + ": " + nom;
 }
 
 int Item::getId() const {
     return id;
 }
+
+
+

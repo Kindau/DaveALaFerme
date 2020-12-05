@@ -1,8 +1,8 @@
 #ifndef WATERINGCAN_H
 #define WATERINGCAN_H
-#include "Item.h"
+#include "Tool.h"
 
-class WateringCan: public Item
+class WateringCan: public Tool
 {
     private:
 
@@ -13,7 +13,7 @@ class WateringCan: public Item
         WateringCan& operator=(const WateringCan& other);
         WateringCan* clone() const{return new WateringCan(*this);} ;
 
-        string str() const;
+        //string str() const;
         //void sprinkle() ;
 };
 

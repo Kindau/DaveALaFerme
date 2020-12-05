@@ -9,6 +9,8 @@
 #include <Wallet.h>
 #include <Mover.h>
 #include <Player.h>
+#include <Calendar.h>
+#include <Map.h>
 
 using namespace std;
 int main()
@@ -37,6 +39,26 @@ int main()
     Market market(0,0);
     Path path(0,0);
     Tile tile(0,0);
+
+
+    Calendar calendrier;
+
+    /*Map* terrain_de_jeu = new Map(20,20);
+
+    cout<<terrain_de_jeu->str()<<endl;
+
+    delete terrain_de_jeu;*/
+
+    Map gameSpace("exempleFichier.txt");
+
+    cout<<gameSpace.str()<<endl;
+
+
+  /*  for(int i = 1;i<= 300;i++){
+        cout<<calendrier.str()<<endl;
+        calendrier.goToNextDay();
+    }
+
 
     cout <<"Si ceci s'affiche c'est que la construction est ok ! "<<endl;
 
@@ -95,7 +117,10 @@ int main()
     tileTestState.handle();
     cout<<tileTestState.getGrowingTime()<<endl;
     tileTestState.handle();
-    cout<<tileTestState.getGrowingTime()<<endl;
+    cout<<tileTestState.getGrowingTime()<<endl;*/
+
+
+
 
     return 0;
 }

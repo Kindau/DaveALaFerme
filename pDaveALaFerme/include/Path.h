@@ -12,6 +12,9 @@ class Path : public Ground
         Path(const Path& other);
         Path& operator=(const Path& other);
 
+        Ground* clone()const;
+        string str()const;
+
     protected:
 
     private:

@@ -23,3 +23,8 @@ Tool& Tool::operator=(const Tool& rhs)
 
     return *this;
 }
+
+string Tool::str()const{
+    string rtn = Item::str();
+    return rtn;
+}

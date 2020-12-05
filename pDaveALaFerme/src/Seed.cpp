@@ -1,6 +1,6 @@
 #include "Seed.h"
 
-Seed::Seed(int id, string nom, /*Season plantingTime,*/ int timeToGrow, int price):Item(id, nom), /*plantingTime(plantingTime),*/ timeToGrow(timeToGrow), price
+Seed::Seed(int id, string nom, Season* plantingTime, int timeToGrow, int price):Item(id, nom), /*plantingTime(plantingTime),*/ timeToGrow(timeToGrow), price(price)
 {
     //ctor
 }
@@ -25,5 +25,12 @@ Seed& Seed::operator=(const Seed& rhs)
     }
 
     return *this;
+}
+
+
+string Seed::str()const{
+    string rtn = Item::str();
+    rtn += " " + to_string(price) + " " + plantingTime->getSeason()->str()+"  timeToGrow: " + to_string(timeToGrow);
+    return rtn;
 }
 

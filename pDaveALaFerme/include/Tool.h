@@ -14,7 +14,7 @@ class Tool: public Item
         Tool* clone() const{return new Tool(*this);};
 
         //void useTool() ;
-        string str() const;
+        virtual string str()const;
 
 };
 

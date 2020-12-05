@@ -1,9 +1,9 @@
 #ifndef HOE_H
 #define HOE_H
-#include "Item.h"
+#include "Tool.h"
 
 
-class Hoe: public Item
+class Hoe: public Tool
 {
     private:
 
@@ -14,7 +14,7 @@ class Hoe: public Item
         Hoe& operator=(const Hoe& other);
         Hoe* clone() const{return new Hoe(*this);};
 
-        string str() const;
+        //string str() const;
 };
 
 #endif // HOE_H

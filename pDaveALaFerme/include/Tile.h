@@ -6,6 +6,8 @@
 #include <Ground.h>
 #include <ISubject.h>
 #include "StateTile.h"
+//TO REMOVE IF REMOVING STR
+using std::string;
 
 //                          Implémente l'interface IObserver
 class Tile : public Ground, public IObserver
@@ -36,6 +38,12 @@ class Tile : public Ground, public IObserver
 
         void setState(StateTile* state);
         void handle();
+
+        Ground* clone()const;
+
+        //temp for test :
+
+        string str()const;
 };
 
 #endif // TILE_H

@@ -32,7 +32,7 @@ class Item
 
         int getId() const;
 
-        string str() const ;
+        virtual string str() const ;
 
 
 };

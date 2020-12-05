@@ -26,3 +26,20 @@ Ground& Ground::operator=(const Ground& rhs)
     }
     return *this;
 }
+
+
+int Ground::getX()const{
+    return x;
+}
+
+int Ground::getY()const{
+    return y;
+}
+
+void Ground::setX(int newX){
+    x = newX;
+}
+
+void Ground::setY(int newY){
+    y = newY;
+}

@@ -18,6 +18,9 @@ class Market : public Ground
 
         void sellItems(); //Cannot be defined as Item isn't
 
+        Ground* clone()const;
+        string str()const;
+
     protected:
 
 

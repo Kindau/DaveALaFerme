@@ -21,6 +21,12 @@ class Home : public Ground
         // ================================================================
 
         Home(int x =0,int y = 0);
+
+
+        string str()const;
+        Ground* clone()const{
+            return new Home(*this);
+        }
 };
 
 #endif // HOME_H

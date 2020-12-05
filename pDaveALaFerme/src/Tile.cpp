@@ -61,3 +61,15 @@ void Tile::handle()
 {
     _state->handle();
 }
+
+Ground* Tile::clone()const{
+    int x = Ground::getX();
+    int y = Ground::getY();
+
+    return new Tile(x,y,_growingTime);
+}
+
+
+string Tile::str()const{
+    return "#";
+}
