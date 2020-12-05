@@ -1,6 +1,6 @@
 #include "Seed.h"
 
-Seed::Seed(int id, string nom, Season* plantingTime, int timeToGrow, int price):Item(id, nom), /*plantingTime(plantingTime),*/ timeToGrow(timeToGrow), price(price)
+Seed::Seed(int id, string nom, string plantingTime, int timeToGrow, int price, int caseX, int caseY):Tool(id, nom), plantingTime(plantingTime),timeToGrow(timeToGrow), price(price), caseX(caseX), caseY(caseY)
 {
     //ctor
 }
@@ -10,18 +10,24 @@ Seed::~Seed()
     //dtor
 }
 
-Seed::Seed(const Seed &seed):Item(seed)
+Seed::Seed(const Seed &seed):Tool(seed)
 {
+    plantingTime = seed.plantingTime ;
     timeToGrow = seed.timeToGrow ;
     price = seed.price ;
+    caseX = seed.caseX ;
+    caseY = seed.caseY ;
 }
 
 Seed& Seed::operator=(const Seed& rhs)
 {
     if (this != &rhs) {
-        Item::operator=(rhs);
+        Tool::operator=(rhs);
+        plantingTime = rhs.plantingTime ;
         timeToGrow = rhs.timeToGrow ;
         price = rhs.price ;
+        caseX = rhs.caseX ;
+        caseY = rhs.caseY ;
     }
 
     return *this;
@@ -29,8 +35,31 @@ Seed& Seed::operator=(const Seed& rhs)
 
 
 string Seed::str()const{
-    string rtn = Item::str();
-    rtn += " " + to_string(price) + " " + plantingTime->getSeason()->str()+"  timeToGrow: " + to_string(timeToGrow);
+    string rtn = Tool::str();
+    rtn += " " + to_string(price) + " " + plantingTime+"  timeToGrow: "
+        + to_string(timeToGrow) + " " + to_string(caseX) + " " + to_string(caseY);
     return rtn;
+}
+
+//GETTERS & SETTERS
+string Seed::getPlantingTime() const
+{
+    return plantingTime ;
+}
+int Seed::getPrice() const
+{
+    return price ;
+}
+int Seed::getTimeToGrow() const
+{
+    return timeToGrow ;
+}
+int Seed::getCaseX() const
+{
+    return caseX ;
+}
+int Seed::getCaseY() const
+{
+    return caseX ;
 }
 
