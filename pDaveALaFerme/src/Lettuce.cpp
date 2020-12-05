@@ -16,7 +16,7 @@ Lettuce::~Lettuce()
 }
 
 // CONSTRUCTEUR DE COPIE
-Lettuce::Lettuce(const Lettuce& other)
+Lettuce::Lettuce(const Lettuce& other):Seed(other)
 {
     //copy ctor
 }
@@ -26,7 +26,7 @@ Lettuce& Lettuce::operator=(const Lettuce& rhs)
 {
     if (this != &rhs)
     {
-
+        Seed::operator=(rhs);
     }
     return *this;
 }

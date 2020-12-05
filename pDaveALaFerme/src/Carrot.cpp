@@ -16,7 +16,7 @@ Carrot::~Carrot()
 }
 
 // CONSTRUCTEUR DE COPIE
-Carrot::Carrot(const Carrot& other)
+Carrot::Carrot(const Carrot& other):Seed(other)
 {
 
 }
@@ -26,7 +26,7 @@ Carrot& Carrot::operator=(const Carrot& rhs)
 {
     if (this != &rhs)
     {
-
+        Seed::operator=(rhs);
     }
     return *this;
 }

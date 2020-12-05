@@ -16,7 +16,7 @@ Eggplant::~Eggplant()
 }
 
 // CONSTRUCTEUR DE COPIE
-Eggplant::Eggplant(const Eggplant& other)
+Eggplant::Eggplant(const Eggplant& other):Seed(other)
 {
     //copy ctor
 }
@@ -26,7 +26,7 @@ Eggplant& Eggplant::operator=(const Eggplant& rhs)
 {
     if (this != &rhs)
     {
-
+        Seed::operator=(rhs);
     }
     return *this;
 }

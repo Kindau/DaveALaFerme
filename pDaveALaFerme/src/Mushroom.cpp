@@ -16,7 +16,7 @@ Mushroom::~Mushroom()
 }
 
 // CONSTRUCTEUR DE COPIE
-Mushroom::Mushroom(const Mushroom& other)
+Mushroom::Mushroom(const Mushroom& other):Seed(other)
 {
     //copy ctor
 }
@@ -26,7 +26,7 @@ Mushroom& Mushroom::operator=(const Mushroom& rhs)
 {
     if (this != &rhs)
     {
-
+        Seed::operator=(rhs);
     }
     return *this;
 }

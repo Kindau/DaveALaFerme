@@ -16,7 +16,7 @@ Pumpkin::~Pumpkin()
 }
 
 // CONSTRUCTEUR DE COPIE
-Pumpkin::Pumpkin(const Pumpkin& other)
+Pumpkin::Pumpkin(const Pumpkin& other):Seed(other)
 {
     //copy ctor
 }
@@ -26,7 +26,7 @@ Pumpkin& Pumpkin::operator=(const Pumpkin& rhs)
 {
     if (this != &rhs)
     {
-
+        Seed::operator=(rhs);
     }
     return *this;
 }

@@ -16,7 +16,7 @@ Tomato::~Tomato()
 }
 
 // CONSTRUCTEUR DE COPIE
-Tomato::Tomato(const Tomato& other)
+Tomato::Tomato(const Tomato& other):Seed(other)
 {
     //copy ctor
 }
@@ -26,7 +26,7 @@ Tomato& Tomato::operator=(const Tomato& rhs)
 {
     if (this != &rhs)
     {
-
+        Seed::operator=(rhs);
     }
     return *this;
 }

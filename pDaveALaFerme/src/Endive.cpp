@@ -16,7 +16,7 @@ Endive::~Endive()
 }
 
 // CONSTRUCTEUR DE COPIE
-Endive::Endive(const Endive& other)
+Endive::Endive(const Endive& other):Seed(other)
 {
     //copy ctor
 }
@@ -26,7 +26,7 @@ Endive& Endive::operator=(const Endive& rhs)
 {
     if (this != &rhs)
     {
-
+        Seed::operator=(rhs);
     }
     return *this;
 }

@@ -16,7 +16,7 @@ Zucchini::~Zucchini()
 }
 
 // CONSTRUCTEUR DE COPIE
-Zucchini::Zucchini(const Zucchini& other)
+Zucchini::Zucchini(const Zucchini& other):Seed(other)
 {
     //copy ctor
 }
@@ -26,7 +26,7 @@ Zucchini& Zucchini::operator=(const Zucchini& rhs)
 {
     if (this != &rhs)
     {
-
+        Seed::operator=(rhs);
     }
     return *this;
 }
