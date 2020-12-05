@@ -30,6 +30,8 @@ class Item
         //Clone
         Item* clone() const{return new Item(*this);} ;
 
+        int getId() const;
+
         string str() const ;
 
 

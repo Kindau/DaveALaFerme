@@ -31,3 +31,6 @@ string Item::str() const {
     //return "item : "+to_string()
 }
 
+int Item::getId() const {
+    return id;
+}

@@ -2,6 +2,9 @@
 #define IVENTORY_H
 
 #include <Item.h>
+#include <Tool.h>
+#include <Seed.h>
+#include <Haverst.h>
 #include <vector>
 #include <string>
 
@@ -13,7 +16,6 @@ class Iventory
 {
     public:
         Iventory();
-        Iventory(vector<Item*> _items);
         virtual ~Iventory();
         Iventory(const Iventory& other);
         Iventory& operator=(const Iventory& other);
@@ -21,14 +23,21 @@ class Iventory
 
         string str() const ;
 
-        void addItem(const Item* item);
+        void addTool(const Tool* tool);
+        void addSeed(const Seed* seed);
+        void addHarvest(const Haverst* harvest);
         void removeAllHarvest();
+        void removeSeed(int id);
+        Seed* getSeedById(int id) const;
+        Tool* getToolById(int id) const;
         int calculateHarvestPrice() const;
 
     protected:
 
     private:
-        vector<Item*> items;
+        vector<Tool*> tools;
+        vector<Seed*> seeds;
+        vector<Haverst*> harvests;
 
 };
 

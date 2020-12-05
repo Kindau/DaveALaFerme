@@ -16,7 +16,7 @@ class Haverst: public Item
         virtual ~Haverst();
         Haverst(const Haverst& other);
         Haverst& operator=(const Haverst& other);
-        //Harvest* clone() const{return new Harvest(*this);};
+        Haverst* clone() const{return new Haverst(*this);};
 
         string str() const;
 
