@@ -27,6 +27,9 @@ class PlowedTile : public StateTile
         PlowedTile(Tile* tile);
 
         void handle();
+        string str()const{
+            return "Plowed";
+        }
 };
 
 #endif // PLOWEDTILE_H

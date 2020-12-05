@@ -28,6 +28,9 @@ class PlantedTile : public StateTile
         PlantedTile(Tile* tile);
 
         void handle();
+        string str()const{
+            return "Planted";
+        }
 };
 
 #endif // PLANTEDTILE_H

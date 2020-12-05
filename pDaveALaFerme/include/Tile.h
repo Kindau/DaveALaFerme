@@ -44,6 +44,7 @@ class Tile : public Ground, public IObserver
         //temp for test :
 
         string str()const;
+        string stringState()const;
 };
 
 #endif // TILE_H

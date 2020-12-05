@@ -73,3 +73,8 @@ Ground* Tile::clone()const{
 string Tile::str()const{
     return "#";
 }
+
+
+string Tile::stringState()const{
+    return _state->str();
+}

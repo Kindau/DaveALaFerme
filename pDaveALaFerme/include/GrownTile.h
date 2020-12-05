@@ -27,6 +27,9 @@ class GrownTile : public StateTile
         GrownTile(Tile* tile);
 
         void handle();
+        string str()const{
+            return "Grown";
+        }
 };
 
 #endif // GROWNTILE_H

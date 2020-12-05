@@ -27,6 +27,9 @@ class SprinkledTile : public StateTile
         SprinkledTile(Tile* tile);
 
         void handle();
+        string str()const{
+            return "Sprinkled";
+        }
 };
 
 #endif // SPRINKLEDTILE_H

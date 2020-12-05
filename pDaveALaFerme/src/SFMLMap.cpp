@@ -17,7 +17,12 @@ bool SFMLMap::load(sf::Vector2u tileSize){ //Ici : tileSize est un vector qui co
     if(!tileSet.loadFromFile("Texture/Dave_TileSet.png")){
         return false;
     }
+    int NB_IMAGE_HORIZONTAL = 6;
+    int NB_IMAGE_VERTICAL = 4;
 
+
+    int setSizeX = tileSet.getSize().x / NB_IMAGE_HORIZONTAL;
+    int setSizeY = tileSet.getSize().y / NB_IMAGE_VERTICAL;
     //On crée un Vertex pour qu'il puisse construire tout le niveau
 
     vertices.setPrimitiveType(sf::Quads);
@@ -27,7 +32,6 @@ bool SFMLMap::load(sf::Vector2u tileSize){ //Ici : tileSize est un vector qui co
     //On rempli le vertex avec un Quad par tuile :
     int width = terrain->getSizeX();
     int height = terrain->getSizeY();
-    cout<<to_string(tileSet.getSize().x)<<endl;
 
     for(int i = 0;i< width;i++){
         for(int j = 0;j<height;j++){
@@ -35,23 +39,51 @@ bool SFMLMap::load(sf::Vector2u tileSize){ //Ici : tileSize est un vector qui co
             //On en déduit sa position dans la texture du tileset
 
             // /!\CE BLOCK EST AMMENÉ A CHANGER AVEC EQUIVALENT EN CARACTERE :: # = telle coordonnée dans le tileset, $ = telle coordonnée dans le tileSet
-            int choice;
-            string tileType = terrain->getGround(i+j*width)->str();
+            int caseX;
+            int caseY;
+            Ground* g = terrain->getGround(i+j*width);
+            string tileType = g->str();
             if( tileType == "#"){
-                choice = 0;
+                Tile* t = (Tile*)g;
+                string typeSoil = t->stringState();
+                if(typeSoil == "Empty"){
+                    caseX = 0;
+                    caseY = 0;
+                }
+                else if(typeSoil == "Grown"){
+                    caseX = 5;
+                    caseY = 0;
+                }
+                else if(typeSoil == "Planted"){
+                    caseX = 3;
+                    caseY = 0;
+                }
+                else if(typeSoil == "Sprinkled"){
+                    caseX = 4;
+                    caseY = 0;
+                }
+                else if(typeSoil == "Plowed"){
+                    caseX = 1;
+                    caseY = 0;
+                }
+
             }
             else if(tileType == "$"){
-                choice = 3;
+                caseX = 2;
+                caseY = 3;
             }
-            else{
-                choice = 1;
+            else if(tileType == "*"){
+                caseX = 3;
+                caseY = 3;
             }
-
-
-            int tu = choice * (tileSet.getSize().x / 6);
-            int tv = choice / (tileSet.getSize().y / 4);
-           // cout<<to_string(tu) +" tv : "+ to_string(tv)<<endl;
-
+            else if(tileType == "B"){
+                caseX = 5;
+                caseY = 2;
+            }
+            else if(tileType == "^"){
+                caseX = 1;
+                caseY = 3;
+            }
 
             //On récupère un pointer vers le quad à définir dans le tableau vertex
             sf::Vertex* quad = &vertices[(i+ j*width) *4];
@@ -66,10 +98,10 @@ bool SFMLMap::load(sf::Vector2u tileSize){ //Ici : tileSize est un vector qui co
 
             //On définit ses quatres coordonnées de texture
 
-            quad[0].texCoords = sf::Vector2f(tu * 427, tv * 400);
-            quad[1].texCoords = sf::Vector2f((tu+1) * 427, tv * 400);
-            quad[2].texCoords = sf::Vector2f((tu+1) * 427, (tv+1) * 400);
-            quad[3].texCoords = sf::Vector2f(tu * 427, (tv+1) * 400);
+            quad[0].texCoords = sf::Vector2f(caseX * setSizeX, caseY *setSizeY);
+            quad[1].texCoords = sf::Vector2f((caseX+1) * setSizeX, caseY * setSizeY);
+            quad[2].texCoords = sf::Vector2f((caseX+1) * setSizeX, (caseY+1) * setSizeY);
+            quad[3].texCoords = sf::Vector2f(caseX * setSizeX, (caseY+1) * setSizeY);
             }
         }
     return true;

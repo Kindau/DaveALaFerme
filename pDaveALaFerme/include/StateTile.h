@@ -22,6 +22,7 @@ class StateTile
         // ================================================================
 
         virtual void handle() = 0;
+        virtual string str()const =0;
 };
 
 #endif // STATETILE_H

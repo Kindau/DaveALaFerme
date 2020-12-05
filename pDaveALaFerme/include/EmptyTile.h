@@ -27,6 +27,10 @@ class EmptyTile : public StateTile
         EmptyTile(Tile* tile);
 
         void handle();
+        string str()const{
+            return "Empty";
+        }
+
 };
 
 #endif // EMPTYTILE_H
