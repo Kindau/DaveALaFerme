@@ -90,6 +90,29 @@ Map& Map::operator=(const Map& rhs)
     return *this;
 }
 
+int Map::getArea()const{
+    return (size_x * size_y);
+}
+
+
+Ground* Map::getGround(int index){
+    return terrain[index];
+}
+
+
+int Map::getSizeX()const{
+    return size_x;
+}
+
+int Map::getSizeY()const{
+    return size_y;
+}
+
+
+
+
+
+
 string Map::str()const{
     string rtn = "";
     int terrainSize = terrain.size();

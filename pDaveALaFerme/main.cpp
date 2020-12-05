@@ -11,28 +11,12 @@
 #include <Player.h>
 #include <Calendar.h>
 #include <Map.h>
+#include "SFMLMap.h"
 
 using namespace std;
 int main()
 {
-    //Je suis un Comm de louis et Audrey et Mel
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-            {
-                window.close();
-            }
-        }
-        window.clear();
-        window.draw(shape);
-        window.display();
-    }
+
 
     cout<<"Test construction des objects ! : "<<endl;
 
@@ -51,7 +35,29 @@ int main()
 
     Map gameSpace("exempleFichier.txt");
 
-    cout<<gameSpace.str()<<endl;
+    SFMLMap gameScreen(&gameSpace);
+    if(!gameScreen.load(sf::Vector2u(40,40))){
+        cout<<"Problème à resoudre :)"<<endl;
+    }
+
+    //Je suis un Comm de louis et Audrey et Mel
+    sf::RenderWindow window(sf::VideoMode(1000, 600), "SFML works!");
+
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+            {
+                window.close();
+            }
+        }
+        window.clear();
+        window.draw(gameScreen);
+        window.display();
+    }
+
 
 
   /*  for(int i = 1;i<= 300;i++){

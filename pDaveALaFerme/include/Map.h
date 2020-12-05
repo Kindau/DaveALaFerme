@@ -26,9 +26,17 @@ class Map
         Map(const Map& other);
         Map& operator=(const Map& other);
 
-        //For testing
 
         string str()const;
+        int getArea()const;
+
+        int getSizeX()const;
+        int getSizeY()const;
+
+
+        //For "communicate" with the SMFL class
+        Ground* getGround(int index);
+
 
     protected:
 
