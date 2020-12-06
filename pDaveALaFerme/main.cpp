@@ -13,12 +13,17 @@
 #include <Map.h>
 #include "SFMLMap.h"
 #include "SFMLOclock.h"
+#include "SFMLPlayer.h"
 
 using namespace std;
 int main()
 {
     Calendar calendrier;
+    Wallet wallet;
+    Mover mover;
+    Player player(&wallet, &mover);
     Map gameSpace("exempleFichier.txt");
+    SFMLPlayer SfmlPlayer(&player);
 
     SFMLMap gameScreen(&gameSpace);
     if(!gameScreen.load(sf::Vector2u(40,40))){
@@ -39,18 +44,41 @@ int main()
             {
                 window.close();
             }
-            if (event.type == sf::Event::KeyPressed){
+            /*if (event.type == sf::Event::KeyPressed){
                 Ground* g = gameSpace.getGround(30);
                 Tile* t = (Tile*)g;
                 t->handle();
                 gameScreen.load(sf::Vector2u(40,40));
                 calendrier.goToNextDay();
                 clock.displayDate();
+            }*/
+             // On déplace le sprite
+            if (event.type == sf::Event::KeyPressed)
+            {
+                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+                {
+                    SfmlPlayer.moveUp();
+                }
+                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+                {
+                    SfmlPlayer.moveDown();
+                }
+                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+                {
+                    SfmlPlayer.moveLeft();
+                }
+                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+                {
+                    SfmlPlayer.moveRight();
+                }
+
             }
         }
         window.clear();
         window.draw(gameScreen);
+        window.draw(*(SfmlPlayer.getSprite()));
         window.draw(clock);
+
         window.display();
     }
 
