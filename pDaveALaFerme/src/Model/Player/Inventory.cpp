@@ -3,7 +3,8 @@
 Inventory::Inventory()
 {
     //ctor
-    //on remplis l'inventaire avec chaque type de seeds possible, quand le player achete une seed on en crée pas de nouvelle, on va augmenter l'attribut nbSeed de la seed correspondante de l'inventaire
+    //on remplis l'inventaire avec chaque type de seeds possible, quand le player achete une seed on en crée pas de nouvelle,
+    //on va augmenter l'attribut nbSeed de la seed correspondante de l'inventaire
     seeds.push_back(new Carrot());
     seeds.push_back(new Eggplant());
     seeds.push_back(new Endive());
@@ -103,19 +104,21 @@ string Inventory::str() const{
     }
     return result;
 }
-
-void Inventory::addTool(Tool* tool)
+// ajoute un clone de l'outil passé en argument
+void Inventory::addTool(const Tool* tool)
 {
     tools.push_back(tool->clone());
 }
 
-void Inventory::addSeed(Seed* seed)
+//ajoute un clone de la seed passée en argument
+void Inventory::addSeed(const Seed* seed)
 {
     seeds.push_back(seed->clone());
 }
 
-//crée et ajoute un harvest par rapport a la seed crée, cherche d'abords si l'Harvest existe deja (basé sur l'id de l'harvest qui est égal a l'id de la seed donc elle viens(par exemple carrot a un id 3 donc Harvest Carrot auras un id 3))
-void Inventory::addHarvest(Seed* seed)
+//crée et ajoute un harvest par rapport a la seed crée, cherche d'abords si l'Harvest existe deja
+//(basé sur l'id de l'harvest qui est égal a l'id de la seed donc elle viens(par exemple carrot a un id 3 donc Harvest Carrot auras un id 3))
+void Inventory::addHarvest(const Seed* seed)
 {
     int index = getHarvestById(seed->getId());
     if(index != -1){
@@ -125,7 +128,7 @@ void Inventory::addHarvest(Seed* seed)
     harvests.push_back(new Harvest(seed->getId(),seed->getNom(),seed->getPrice(),1));
 }
 
-
+//remove toutes les Harvest de l'inventaire et cleans le vector Harvests, est appelé lorsque l'on vend notre recolte au magasin.
 void Inventory::removeAllHarvest()
 {
     for(int i=0;i<(int)harvests.size();i++){
@@ -135,6 +138,7 @@ void Inventory::removeAllHarvest()
     harvests.clear();
 }
 
+//baisse le nombre dans l'inventaire de la seed possédant l'id passé en argument de 1.
 void Inventory::removeOneSeed(int id){
 
     for(int i=0;i<(int)seeds.size();i++){
@@ -148,6 +152,7 @@ void Inventory::removeOneSeed(int id){
 
 }
 
+//augmenta le nombre dans l'inventaire de la seed possédant l'id passé en argument de 1.
 void Inventory::addOneSeed(int id){
     for(int i=0;i<(int)seeds.size();i++){
         if(seeds[i]->getId() == id){
@@ -193,6 +198,7 @@ Tool* Inventory::getToolById(int id) const{
     return nullptr;
 }
 
+//renvoie le prix de vente total de toute la récolte dans l'inventaire.
 int Inventory::calculateHarvestPrice() const{
     int result = 0;
     for(int i=0;i<(int)harvests.size();i++){

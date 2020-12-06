@@ -34,22 +34,40 @@ string Player::str() const{
     return "Player:\n"+wallet.str() +"\n"+ mover.str();
 }
 
+//Setteurs
 void Player::setTool(Tool* _tool){
     tool = _tool;
 }
 
-Tool* Player::getTool()const {
-    return tool;
-}
+
 
 void Player::setSeed(Seed* _seed){
     seed = _seed;
+}
+
+// Getteurs
+Tool* Player::getTool()const {
+    return tool;
 }
 
 Seed* Player::getSeed()const {
     return seed;
 }
 
+int Player::getActualMoney() const{
+    return wallet.getMoney();
+}
+
+int Player::getnbCase() const{
+    return mover.getnbCase();
+}
+
+Inventory* Player::getInventory(){
+    return &inventory;
+}
+
+// les méthodes move font appel au méthode move correspondante du moveur, elle sont appellé lorsque le sprite est déplacer dans SFMLPlayer pour garder une trace symbolique de la position
+// du player sur la map (la première tuile en haut a gauche etant la tuile 0 et la dernière tuile en bas a droite etant la tuile 374)
 void Player::moveDown() {
     mover.moveDown();
 }
@@ -66,22 +84,14 @@ void Player::moveUp(){
     mover.moveUp();
 }
 
+
+// permet d'ajouter de l'argent au wallet du joueur
 void Player::addMoney(int ammount){
     wallet.addMoney(ammount);
 }
 
+// permet de retirer de l'argent du wallet du joueur
 void Player::spendMoney(int ammount){
     wallet.spendMoney(ammount);
 }
 
-int Player::getActualMoney() const{
-    return wallet.getMoney();
-}
-
-int Player::getnbCase() const{
-    return mover.getnbCase();
-}
-
-Inventory* Player::getInventory(){
-    return &inventory;
-}
