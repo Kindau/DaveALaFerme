@@ -12,6 +12,7 @@
 #include <Calendar.h>
 #include <Map.h>
 #include "SFMLMap.h"
+#include "SFMLOclock.h"
 
 using namespace std;
 int main()
@@ -26,6 +27,9 @@ int main()
 
     sf::RenderWindow window(sf::VideoMode(1000, 600), "Dave à la ferme");
 
+    SFMLOclock clock(&calendrier);
+    clock.displayDate();
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -35,9 +39,18 @@ int main()
             {
                 window.close();
             }
+            if (event.type == sf::Event::KeyPressed){
+                Ground* g = gameSpace.getGround(30);
+                Tile* t = (Tile*)g;
+                t->handle();
+                gameScreen.load(sf::Vector2u(40,40));
+                calendrier.goToNextDay();
+                clock.displayDate();
+            }
         }
         window.clear();
         window.draw(gameScreen);
+        window.draw(clock);
         window.display();
     }
 
