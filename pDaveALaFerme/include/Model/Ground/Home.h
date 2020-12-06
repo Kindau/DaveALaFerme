@@ -2,10 +2,14 @@
 #define HOME_H
 
 #include "Model/Ground/Ground.h"
+#include "Model/Ground/IInteractive.h"
+#include "Model/Calendar/Calendar.h"
 
-
-class Home : public Ground
+class Home : public Ground //,public IInteractive
 {
+private:
+    Calendar* calendar;
+
     public:
         // ================================================================
         // FORME CANONIQUE
@@ -20,13 +24,16 @@ class Home : public Ground
             Home& operator=(const Home& other);
         // ================================================================
 
-        Home(int x =0,int y = 0);
+        Home(Calendar* cal,int x =0,int y = 0);
 
 
         string str()const;
         Ground* clone()const{
             return new Home(*this);
         }
+
+        virtual bool interact(Tool* t);
+        virtual bool interact(Seed* s){return false;}
 };
 
 #endif // HOME_H

@@ -22,7 +22,9 @@ void SFMLOclock::displayDate(){
         date.setString(calendar->str());
     }
 
-
+void SFMLOclock::update(){
+    displayDate();
+}
 
 SFMLOclock::~SFMLOclock()
 {

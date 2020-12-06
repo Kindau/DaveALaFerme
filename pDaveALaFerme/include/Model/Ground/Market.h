@@ -2,9 +2,9 @@
 #define MARKET_H
 
 #include "Model/Ground/Ground.h"
+#include "Model/Ground/IInteractive.h"
 
-
-class Market : public Ground
+class Market : public Ground//, public IInteractive
 {
 
     private:
@@ -22,6 +22,9 @@ class Market : public Ground
         string str()const;
 
         void interact();
+
+        virtual bool interact(Tool* t){return false;}
+        virtual bool interact(Seed* s){return false;}
 
     protected:
 

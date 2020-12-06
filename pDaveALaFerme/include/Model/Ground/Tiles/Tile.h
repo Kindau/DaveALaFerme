@@ -4,20 +4,27 @@
 #include <string>
 
 #include "Model/Ground/Ground.h"
-#include "Model/Calendar/ISubject.h"
 #include "Model/Ground/Tiles/StateTile.h"
 #include "Model/Ground/IInteractive.h"
 #include "Model/Item/Seeds/Seed.h"
 #include "Model/Item/Tools/Tool.h"
+#include "Model/Calendar/IObserver.h"
+#include "Model/Calendar/Calendar.h"
+#include "Model/Player/Player.h"
 //TO REMOVE IF REMOVING STR
 using std::string;
 
 //                          Implémente l'interface IObserver
-class Tile : public Ground, public IObserver, public IInteractive
+class Tile : public Ground, public IObserver //, public IInteractive
 {
     private:
         StateTile* _state;
         int _growingTime;
+
+        Player* player;
+
+        //Pour l'observer :
+        //Calendar* calendar;
 
         //For interface
 
@@ -44,15 +51,24 @@ class Tile : public Ground, public IObserver, public IInteractive
         void setState(StateTile* state);
         void handle();
 
+        void setPlayer(Player* p){
+            player = p;
+        }
+
+        Player* getPlayer()const{
+            return player;
+        }
+
+
         Ground* clone()const;
 
         //temp for test :
 
         string str()const;
         string stringState()const;
-;
-        virtual bool interact(Tool* t){return false;}
-        virtual bool interact(Seed* s){return false;}
+
+        virtual bool interact(Tool* t){return _state->interact(t);}
+        virtual bool interact(Seed* s){return _state->interact(s);}
 };
 
 #endif // TILE_H

@@ -16,13 +16,14 @@ class Map
 
         vector<Ground*> terrain;
         Calendar* calendrier;
+        Player* player;
 
 
 
 
 
     public:
-        Map(string fileName = "exempleFichier.txt");
+        Map(Calendar* cal,Player* p,string fileName = "exempleFichier.txt");
         Map(int size_x = 20,int size_y = 20);
         virtual ~Map();
         Map(const Map& other);

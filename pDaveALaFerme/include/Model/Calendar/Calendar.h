@@ -3,6 +3,7 @@
 
 #include <Model/Calendar/Seasons/Season.h>
 #include "Model/Calendar/ISubject.h"
+#include "Model/Calendar/IObserver.h"
 #include <string>
 #include <list>
 

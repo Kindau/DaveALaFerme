@@ -14,6 +14,8 @@ class Seed: public Tool
         string plantingTime ;
         int timeToGrow ;
         int price ;
+
+        //La position dans le TILESET
         int caseX ;
         int caseY ;
         int nbSeeds;

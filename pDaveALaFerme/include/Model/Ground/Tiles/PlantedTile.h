@@ -16,6 +16,8 @@ class PlantedTile : public StateTile
         int offset;
 
 
+
+
     public:
         // ================================================================
         // FORME CANONIQUE

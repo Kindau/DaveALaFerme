@@ -3,6 +3,9 @@
 #include <iostream>
 #include <string>
 
+#include "Model/Item/Tools/Tool.h"
+#include "Model/Item/Seeds/Seed.h"
+
 using namespace std;
 
 class StateTile
@@ -20,9 +23,12 @@ class StateTile
         //4 OPERATEUR D'AFFECTION
             StateTile& operator=(const StateTile& other);
         // ================================================================
-
+        virtual void update()=0;
         virtual void handle() = 0;
         virtual string str()const =0;
+
+        virtual bool interact(Tool* t)=0;
+        virtual bool interact(Seed* s)=0;
 };
 
 #endif // STATETILE_H

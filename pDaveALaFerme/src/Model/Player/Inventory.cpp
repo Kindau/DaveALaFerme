@@ -104,18 +104,18 @@ string Inventory::str() const{
     return result;
 }
 
-void Inventory::addTool(const Tool* tool)
+void Inventory::addTool(Tool* tool)
 {
     tools.push_back(tool->clone());
 }
 
-void Inventory::addSeed(const Seed* seed)
+void Inventory::addSeed(Seed* seed)
 {
     seeds.push_back(seed->clone());
 }
 
 //crée et ajoute un harvest par rapport a la seed crée, cherche d'abords si l'Harvest existe deja (basé sur l'id de l'harvest qui est égal a l'id de la seed donc elle viens(par exemple carrot a un id 3 donc Harvest Carrot auras un id 3))
-void Inventory::addHarvest(const Seed* seed)
+void Inventory::addHarvest(Seed* seed)
 {
     int index = getHarvestById(seed->getId());
     if(index != -1){

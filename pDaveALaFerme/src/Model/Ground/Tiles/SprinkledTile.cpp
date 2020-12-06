@@ -5,7 +5,7 @@
 // CONSTRUCTEUR
 SprinkledTile::SprinkledTile(Tile* tile,Seed* seed,int _offset): _tile(tile),offset(_offset),plantedSeed(seed)
 {
-    //ctor
+
 }
 
 // =========================================================================================
@@ -37,8 +37,13 @@ SprinkledTile& SprinkledTile::operator=(const SprinkledTile& rhs)
 
 void SprinkledTile::handle()
 {
-    printf("sprinkled\n");
+    if(_tile->getGrowingTime() > 0){
     _tile->setState(new PlantedTile(_tile,plantedSeed,offset+1));
+    }
+    else
+    {
+        _tile->setState(new GrownTile(_tile,plantedSeed));
+    }
 }
 
 
@@ -52,6 +57,9 @@ void SprinkledTile::update(){
 
 
 
+
+
+//Interaction utilisateur
 bool SprinkledTile::interact(Tool* t){
     return false;
 }

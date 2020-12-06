@@ -3,7 +3,7 @@
 #include "Model/Ground/Tiles/PlantedTile.h"
 
 // CONSTRUCTEUR
-GrownTile::GrownTile(Tile* tile): _tile(tile)
+GrownTile::GrownTile(Tile* tile,Seed* s): _tile(tile),plantedSeed(s)
 {
     //ctor
 }
@@ -36,7 +36,7 @@ GrownTile& GrownTile::operator=(const GrownTile& rhs)
 
 void GrownTile::handle()
 {
-    printf("grown\n");
+    _tile->getPlayer()->getInventory()->addHarvest(plantedSeed);
     _tile->setState(new EmptyTile(_tile));
 }
 
@@ -46,9 +46,11 @@ void GrownTile::update(){
 }
 
 bool GrownTile::interact(Tool* t){
-    return false;
+    handle();
+    return true;
 }
 
 bool GrownTile::interact(Seed* s){
-    return false;
+    handle();
+    return true;
 }

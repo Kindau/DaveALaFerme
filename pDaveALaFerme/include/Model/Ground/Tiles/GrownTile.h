@@ -11,6 +11,7 @@ class GrownTile : public StateTile
 {
     private:
         Tile* _tile;
+        Seed* plantedSeed;
 
     public:
         // ================================================================
@@ -26,7 +27,7 @@ class GrownTile : public StateTile
             GrownTile& operator=(const GrownTile& other);
         // ================================================================
 
-        GrownTile(Tile* tile);
+        GrownTile(Tile* tile,Seed* plantedSeed);
 
         void handle();
         string str()const{

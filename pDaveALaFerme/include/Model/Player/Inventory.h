@@ -37,9 +37,9 @@ class Inventory
 
         string str() const ;
 
-        void addTool(const Tool* tool);
-        void addSeed(const Seed* seed);
-        void addHarvest(const Seed* seed);
+        void addTool(Tool* tool);
+        void addSeed(Seed* seed);
+        void addHarvest(Seed* seed);
         void removeAllHarvest();
         void addOneHarvest();
         void removeOneSeed(int id);

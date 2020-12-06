@@ -19,10 +19,11 @@ Map::Map(int _x,int _y):size_x(_x),size_y(_y)
             y++;
        }
     }
+    calendrier = new Calendar(1);
 }
 
 
-Map::Map(string fileName){
+Map::Map(Calendar* cal,Player* p,string fileName):calendrier(cal),player(p){
     ifstream mappingStream("Map/"+fileName);
     if(mappingStream){
         //Lecture d'un fichier dont les 2 premières lignes sont les dimensions
@@ -39,6 +40,9 @@ Map::Map(string fileName){
                     }
                     else if(c == '#'){
                         terrain.push_back(new Tile(i,j));
+                        //Comme push_back ajoute systématiquement en dernière position :
+                        calendrier->attach((Tile*)(terrain.back()));
+                        ((Tile*)(terrain.back()))->setPlayer(player);
                     }
                     else if(c == '$'){
                         terrain.push_back(new Market(i,j));
@@ -47,7 +51,7 @@ Map::Map(string fileName){
                         terrain.push_back(new Path(i,j));
                     }
                     else if(c == '^'){
-                        terrain.push_back(new Home(i,j));
+                        terrain.push_back(new Home(calendrier,i,j));
                     }
                     else if(c == 'B'){
                         terrain.push_back(new Storage(i,j));

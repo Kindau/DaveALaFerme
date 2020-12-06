@@ -3,11 +3,12 @@
 
 #include "Model/GameObject.h"
 #include <string>
+#include "Model/Ground/IInteractive.h"
 
 using std::string;
 
 //Abstract class
-class Ground:public GameObject
+class Ground:public GameObject//, public IInteractive
 {
     private:
         int x;
@@ -31,6 +32,8 @@ class Ground:public GameObject
         //For testing :
 
         virtual string str()const=0;
+        virtual bool interact(Tool* t)=0;
+        virtual bool interact(Seed* s)=0;
 
     protected:
 

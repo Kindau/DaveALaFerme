@@ -2,9 +2,10 @@
 #define STORAGE_H
 
 #include "Model/Ground/Ground.h"
+#include "Model/Ground/IInteractive.h"
 
 
-class Storage : public Ground
+class Storage : public Ground//, public IInteractive
 {
     public:
         // ================================================================
@@ -28,6 +29,9 @@ class Storage : public Ground
         }
 
         void interact();
+
+        virtual bool interact(Tool* t){return false;}
+        virtual bool interact(Seed* s){return false;}
 
 };
 

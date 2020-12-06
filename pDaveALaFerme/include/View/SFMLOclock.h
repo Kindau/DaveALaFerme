@@ -2,8 +2,9 @@
 #define SFMLOCLOCK_H
 #include <SFML/Graphics.hpp>
 #include "Model/Calendar/Calendar.h"
+#include "Model/Calendar/IObserver.h"
 
-class SFMLOclock : public sf::Transformable, public sf::Drawable
+class SFMLOclock : public sf::Transformable, public sf::Drawable, public IObserver
 {
     private:
         Calendar* calendar;
@@ -29,6 +30,14 @@ class SFMLOclock : public sf::Transformable, public sf::Drawable
 
 
         void displayDate();
+
+        void update();
+        void subscribe(ISubject* s){
+            s->attach(this);
+        }
+        void unsubscribe(ISubject* s){
+            s->detach(this);
+        }
 
 
 

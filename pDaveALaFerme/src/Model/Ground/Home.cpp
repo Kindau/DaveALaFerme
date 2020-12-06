@@ -1,7 +1,7 @@
 #include "Model/Ground/Home.h"
 
 // CONSTRUCTEUR
-Home::Home(int _x,int _y):Ground(_x,_y)
+Home::Home(Calendar* cal,int _x,int _y):Ground(_x,_y),calendar(cal)
 {
     //ctor
 }
@@ -32,7 +32,11 @@ Home& Home::operator=(const Home& rhs)
 }
 // =========================================================================================
 
-
+bool Home::interact(Tool* s){
+    //Ici le tool importe peu
+    calendar->goToNextDay();
+    return true;
+}
 
 
 string Home::str()const{

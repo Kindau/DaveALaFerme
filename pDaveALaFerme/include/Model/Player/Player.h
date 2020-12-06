@@ -22,6 +22,7 @@ class Player
         void setSeed(Seed* _seed);
         Seed* getSeed()const;
 
+
         void moveUp();
         void moveDown();
         void moveLeft();

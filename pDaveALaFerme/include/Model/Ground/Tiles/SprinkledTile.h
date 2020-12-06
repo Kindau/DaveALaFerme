@@ -7,7 +7,12 @@
 #include "Model/Item/Seeds/Seed.h"
 #include "Model/Item/Tools/Tool.h"
 
-class SprinkledTile : public StateTile
+
+//Implémentation de l'observer
+#include "Model/Calendar/IObserver.h"
+#include "Model/Calendar/ISubject.h"
+
+class SprinkledTile : public StateTile, public IObserver
 {
     private:
         Tile* _tile;
@@ -37,6 +42,7 @@ class SprinkledTile : public StateTile
 
 
         void update();
+
 
         bool interact(Tool* t);
         bool interact(Seed* s);

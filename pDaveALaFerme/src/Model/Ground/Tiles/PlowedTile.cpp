@@ -35,8 +35,10 @@ PlowedTile& PlowedTile::operator=(const PlowedTile& rhs)
 
 void PlowedTile::handle()
 {
-    printf("plowed\n");
-    _tile->setState(new PlantedTile(_tile,tryingSeed));
+    if(_tile->getPlayer()->getSeed()->getNbSeeds() != 0){
+        _tile->getPlayer()->getSeed()->minusSeed();
+        _tile->setState(new PlantedTile(_tile,tryingSeed));
+    }
 }
 
 

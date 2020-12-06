@@ -38,6 +38,7 @@ void Calendar::goToNextDay(){
     else{
         date += 1;
     }
+    notify();
 }
 
 Season* Calendar::getActualSeason(){
@@ -47,7 +48,6 @@ Season* Calendar::getActualSeason(){
 string Calendar::str()const{
     return to_string(date) + " "+season->getSeason()->str();
 }
-
 
 
 

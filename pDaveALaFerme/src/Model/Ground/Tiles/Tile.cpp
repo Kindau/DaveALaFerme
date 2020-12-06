@@ -49,7 +49,7 @@ void Tile::setGrowingTime(int time)
 
 //OTHER METHODS
 void Tile::update(){
-
+    _state->update();
 }
 
 // STATE PATTERN METHODS

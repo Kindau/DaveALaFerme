@@ -35,7 +35,6 @@ string Player::str() const{
 }
 
 void Player::setTool(Tool* _tool){
-    seed = nullptr;
     tool = _tool;
 }
 
@@ -44,7 +43,6 @@ Tool* Player::getTool()const {
 }
 
 void Player::setSeed(Seed* _seed){
-    tool = nullptr;
     seed = _seed;
 }
 

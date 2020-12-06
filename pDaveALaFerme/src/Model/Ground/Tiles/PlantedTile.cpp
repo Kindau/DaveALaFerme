@@ -43,17 +43,8 @@ PlantedTile& PlantedTile::operator=(const PlantedTile& rhs)
 void PlantedTile::handle()
 {
     printf("planted\n");
+    _tile->setState(new SprinkledTile(_tile,plantedSeed,offset));
 
-    if (_tile->getGrowingTime() > 0)
-    {
-        _tile->setGrowingTime(_tile->getGrowingTime()-1);
-        _tile->setState(new SprinkledTile(_tile,plantedSeed,offset));
-    }
-    else
-    {
-        _tile->setGrowingTime(10);
-        _tile->setState(new GrownTile(_tile));
-    }
 }
 
 

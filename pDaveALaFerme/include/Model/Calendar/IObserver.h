@@ -15,6 +15,8 @@ class IObserver
         IObserver& operator=(const IObserver& other);
 
         virtual void update() = 0;
+//        virtual void subscribe(ISubject* subject);
+//        virtual void unsubscribe(ISubject* subject);
 
     protected:
 

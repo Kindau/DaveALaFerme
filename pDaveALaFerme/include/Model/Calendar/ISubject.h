@@ -1,7 +1,7 @@
 #ifndef ISUBJECT_H
 #define ISUBJECT_H
 
-#include <Model/Calendar/IObserver.h>
+#include "Model/Calendar/IObserver.h"
 
 //Equivalent à une interface (observabble)
 class ISubject
