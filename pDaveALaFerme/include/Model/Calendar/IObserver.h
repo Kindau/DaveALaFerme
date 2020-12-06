@@ -14,7 +14,7 @@ class IObserver
         IObserver(const IObserver& other);
         IObserver& operator=(const IObserver& other);
 
-        virtual void update(const string &message_from_subject) = 0;
+        virtual void update() = 0;
 
     protected:
 

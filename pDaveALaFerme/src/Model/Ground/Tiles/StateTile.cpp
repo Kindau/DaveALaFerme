@@ -12,7 +12,6 @@ StateTile::StateTile()
 // DESTRUCTEUR
 StateTile::~StateTile()
 {
-    //dtor
 }
 
 // CONSTRUCTEUR DE COPIE

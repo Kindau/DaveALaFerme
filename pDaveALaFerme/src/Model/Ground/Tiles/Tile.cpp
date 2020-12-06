@@ -2,9 +2,10 @@
 #include "Model/Ground/Tiles/EmptyTile.h"
 
 // CONSTRUCTEUR
-Tile::Tile(int _x,int _y, int growingTime):Ground(_x,_y), _growingTime(growingTime)
+Tile::Tile(int _x,int _y, int growingTime):Ground(_x,_y),_growingTime(growingTime)
 {
     _state = new EmptyTile(this);
+    //plantedSeed = nullptr;
 }
 
 // =========================================================================================
@@ -47,7 +48,7 @@ void Tile::setGrowingTime(int time)
 }
 
 //OTHER METHODS
-void Tile::update(const string &str){
+void Tile::update(){
 
 }
 
@@ -78,3 +79,4 @@ string Tile::str()const{
 string Tile::stringState()const{
     return _state->str();
 }
+

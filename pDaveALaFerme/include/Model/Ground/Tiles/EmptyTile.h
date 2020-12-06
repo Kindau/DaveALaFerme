@@ -4,6 +4,8 @@
 #include "Model/Ground/Tiles/Tile.h"
 #include "Model/Ground/Tiles/StateTile.h"
 #include "Model/Ground/Tiles/PlowedTile.h"
+#include "Model/Item/Seeds/Seed.h"
+#include "Model/Item/Tools/Tool.h"
 
 class EmptyTile : public StateTile
 {
@@ -30,6 +32,12 @@ class EmptyTile : public StateTile
         string str()const{
             return "Empty";
         }
+
+        //For update
+        void update();
+
+        bool interact(Tool* t);
+        bool interact(Seed* s);
 
 };
 

@@ -72,6 +72,9 @@ int main()
                 {
                     SfmlPlayer.moveRight();
                 }
+                if(sf::Keyboard::isKeyPresse(sf::Keyboard::Space)){
+                   // SfmlPlayer.getSprite()->getPosition()->
+                }
 
             }
         }

@@ -15,6 +15,7 @@ class Hoe: public Tool
         Hoe* clone() const{return new Hoe(*this);};
 
         //string str() const;
+        string toolType()const;
 };
 
 #endif // HOE_H

@@ -48,3 +48,24 @@ string Calendar::str()const{
     return to_string(date) + " "+season->getSeason()->str();
 }
 
+
+
+
+void Calendar::attach(IObserver *observer) {
+    list_observer.push_back(observer);
+}
+
+void Calendar::detach(IObserver *observer){
+    list_observer.remove(observer);
+}
+
+void Calendar::notify(){
+    std::list<IObserver *>::iterator iterate = list_observer.begin();
+    while(iterate != list_observer.end()){
+        (*iterate)->update();
+        ++iterate;
+    }
+}
+
+
+

@@ -4,6 +4,7 @@
 #include <vector>
 #include "Model/Ground/Ground.h"
 #include "Model/Ground/Tiles/Tile.h"
+#include "Model/Calendar/Calendar.h"
 
 using std::vector;
 
@@ -14,13 +15,14 @@ class Map
         int size_y;
 
         vector<Ground*> terrain;
+        Calendar* calendrier;
 
 
 
 
 
     public:
-        Map(string fileName);
+        Map(string fileName = "exempleFichier.txt");
         Map(int size_x = 20,int size_y = 20);
         virtual ~Map();
         Map(const Map& other);

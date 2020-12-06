@@ -23,3 +23,8 @@ WateringCan& WateringCan::operator=(const WateringCan& rhs)
 
     return *this;
 }
+
+
+string WateringCan::toolType()const{
+    return "WateringCan";
+}

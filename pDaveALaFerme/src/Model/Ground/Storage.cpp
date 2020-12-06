@@ -37,3 +37,8 @@ Storage& Storage::operator=(const Storage& rhs)
 string Storage::str()const{
     return "B";
 }
+
+
+void Storage::interact(){
+    //Ouvrir la fenetre du menu
+}

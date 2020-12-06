@@ -21,6 +21,8 @@ class Market : public Ground
         Ground* clone()const;
         string str()const;
 
+        void interact();
+
     protected:
 
 

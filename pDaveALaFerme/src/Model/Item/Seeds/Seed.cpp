@@ -5,6 +5,14 @@ Seed::Seed(int id, string nom, string plantingTime, int timeToGrow, int price, i
     //ctor
 }
 
+Seed::Seed():Tool(0,""){
+    plantingTime = "none";
+    timeToGrow = 0;
+    price = 0;
+    caseX = 0;
+    caseY = 0;
+}
+
 Seed::~Seed()
 {
     //dtor

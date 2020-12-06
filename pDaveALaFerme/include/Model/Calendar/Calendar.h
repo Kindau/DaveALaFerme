@@ -2,17 +2,22 @@
 #define CALENDAR_H
 
 #include <Model/Calendar/Seasons/Season.h>
+#include "Model/Calendar/ISubject.h"
 #include <string>
+#include <list>
 
 using std::string;
 using std::to_string;
 
-class Calendar
+class Calendar : public ISubject
 {
     private:
         int date;
         int MONTH_DAY = 30;
         Season* season;
+
+        //La liste des observers de calendar
+        std::list<IObserver*> list_observer;
 
     public:
         Calendar(int date = 1);
@@ -25,6 +30,12 @@ class Calendar
         Season* getActualSeason();
 
         string str()const;
+
+        //For implementation of the observer
+
+        void attach(IObserver *observer);
+        void detach(IObserver *observer);
+        void notify();
 
 
     protected:

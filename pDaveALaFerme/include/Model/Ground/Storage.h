@@ -27,6 +27,8 @@ class Storage : public Ground
             return new Storage(*this);
         }
 
+        void interact();
+
 };
 
 #endif // STORAGE_H

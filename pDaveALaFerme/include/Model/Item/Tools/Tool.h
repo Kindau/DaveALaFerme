@@ -15,6 +15,7 @@ class Tool: public Item
 
         //void useTool() ;
         virtual string str()const;
+        virtual string toolType()const{return "";}
 
 };
 

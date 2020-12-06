@@ -13,6 +13,8 @@ class WateringCan: public Tool
         WateringCan& operator=(const WateringCan& other);
         WateringCan* clone() const{return new WateringCan(*this);} ;
 
+        string toolType()const;
+
         //string str() const;
         //void sprinkle() ;
 };

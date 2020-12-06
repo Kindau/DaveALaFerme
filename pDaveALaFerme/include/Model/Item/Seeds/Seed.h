@@ -18,6 +18,7 @@ class Seed: public Tool
         int caseY ;
 
     public:
+        Seed();
         Seed(int id, string nom,string plantingTime,int timeToGrow, int price, int caseX, int caseY);
         virtual ~Seed();
         Seed(const Seed& other);
@@ -34,7 +35,9 @@ class Seed: public Tool
 
         //void toPlant() ;
         string str()const;
-
+        virtual string toolType()const{
+            return "";
+        }
 };
 
 #endif // SEED_H

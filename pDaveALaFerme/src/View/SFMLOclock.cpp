@@ -13,7 +13,7 @@ SFMLOclock::SFMLOclock(Calendar* calendrier):calendar(calendrier)
         date.setString(calendar->str());
         date.setPosition(sf::Vector2f(900,10));
         date.setCharacterSize(20);
-        date.setFillColor(sf::Color(255,216,0));
+        date.setFillColor(sf::Color(255,214,0));
     }
 }
 

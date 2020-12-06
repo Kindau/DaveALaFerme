@@ -1,5 +1,6 @@
 #include "Model/Ground/Tiles/PlowedTile.h"
-
+#include "Model/Ground/Tiles/StateTile.h"
+#include "Model/Ground/Tiles/PlantedTile.h"
 // CONSTRUCTEUR
 PlowedTile::PlowedTile(Tile* tile): _tile(tile)
 {
@@ -12,7 +13,7 @@ PlowedTile::PlowedTile(Tile* tile): _tile(tile)
 // DESTRUCTEUR
 PlowedTile::~PlowedTile()
 {
-    //dtor
+    delete _tile;
 }
 
 // CONSTRUCTEUR DE COPIE
@@ -35,5 +36,22 @@ PlowedTile& PlowedTile::operator=(const PlowedTile& rhs)
 void PlowedTile::handle()
 {
     printf("plowed\n");
-    _tile->setState(new PlantedTile(_tile));
+    _tile->setState(new PlantedTile(_tile,tryingSeed));
+}
+
+
+void PlowedTile::update(){
+    //Ne dépends pas du changement du date
+}
+
+
+bool PlowedTile::interact(Seed* s){
+    tryingSeed = s;
+    //Vérification de la saison à implémenter
+    handle();
+    return true;
+}
+
+bool PlowedTile::interact(Tool* t){
+    return false;
 }

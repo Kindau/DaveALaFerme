@@ -23,3 +23,7 @@ Hoe& Hoe::operator=(const Hoe& rhs)
 
     return *this;
 }
+
+string Hoe::toolType()const{
+    return "Hoe";
+}

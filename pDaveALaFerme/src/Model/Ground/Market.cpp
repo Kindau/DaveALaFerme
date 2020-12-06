@@ -46,3 +46,7 @@ Ground* Market::clone()const{
 string Market::str()const{
     return "$";
 }
+
+void Market::interact(){
+    //Ouvrir l'interface Market
+}
