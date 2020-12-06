@@ -105,13 +105,13 @@ string Inventory::str() const{
     return result;
 }
 // ajoute un clone de l'outil passé en argument
-void Inventory::addTool(const Tool* tool)
+void Inventory::addTool(Tool* tool)
 {
     tools.push_back(tool->clone());
 }
 
 //ajoute un clone de la seed passée en argument
-void Inventory::addSeed(const Seed* seed)
+void Inventory::addSeed(Seed* seed)
 {
     seeds.push_back(seed->clone());
 }
