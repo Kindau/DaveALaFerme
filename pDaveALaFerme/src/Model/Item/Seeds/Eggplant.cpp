@@ -1,7 +1,7 @@
 #include "Model/Item/Seeds/Eggplant.h"
 
 // CONSTRUCTEUR
-Eggplant::Eggplant(): Seed(5, "Eggplant", "Winter", 4, 3, 1, 1)
+Eggplant::Eggplant(): Seed(4, "Eggplant", "Winter", 4, 3, 1, 1)
 {
     //ctor
 }

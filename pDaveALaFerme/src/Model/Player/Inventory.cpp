@@ -3,6 +3,17 @@
 Inventory::Inventory()
 {
     //ctor
+    //on remplis l'inventaire avec chaque type de seeds possible, quand le player achete une seed on en crée pas de nouvelle, on va augmenter l'attribut nbSeed de la seed correspondante de l'inventaire
+    seeds.push_back(new Carrot());
+    seeds.push_back(new Eggplant());
+    seeds.push_back(new Endive());
+    seeds.push_back(new Lettuce());
+    seeds.push_back(new Mushroom());
+    seeds.push_back(new Pumpkin());
+    seeds.push_back(new Radish());
+    seeds.push_back(new Tomato());
+    seeds.push_back(new Zucchini());
+
 }
 
 Inventory::~Inventory()
@@ -103,10 +114,15 @@ void Inventory::addSeed(const Seed* seed)
     seeds.push_back(seed->clone());
 }
 
-
-void Inventory::addHarvest(const Harvest* harvest)
+//crée et ajoute un harvest par rapport a la seed crée, cherche d'abords si l'Harvest existe deja (basé sur l'id de l'harvest qui est égal a l'id de la seed donc elle viens(par exemple carrot a un id 3 donc Harvest Carrot auras un id 3))
+void Inventory::addHarvest(const Seed* seed)
 {
-    harvests.push_back(harvest->clone());
+    int index = getHarvestById(seed->getId());
+    if(index != -1){
+        harvests[index]->addOneHarvest();
+        return;
+    }
+    harvests.push_back(new Harvest(seed->getId(),seed->getNom(),seed->getPrice(),1));
 }
 
 
@@ -119,12 +135,11 @@ void Inventory::removeAllHarvest()
     harvests.clear();
 }
 
-void Inventory::removeSeed(int id){
+void Inventory::removeOneSeed(int id){
 
     for(int i=0;i<(int)seeds.size();i++){
         if(seeds[i]->getId() == id){
-            delete seeds[i];
-            seeds.erase(seeds.begin()+i);
+            seeds[i]->minusSeed();
             return;
         }
 
@@ -132,6 +147,18 @@ void Inventory::removeSeed(int id){
 
 
 }
+
+void Inventory::addOneSeed(int id){
+    for(int i=0;i<(int)seeds.size();i++){
+        if(seeds[i]->getId() == id){
+            seeds[i]->addSeed();
+            return;
+        }
+
+    }
+}
+
+
 
 Seed* Inventory::getSeedById(int id) const{
     for(int i=0;i<(int)seeds.size();i++){
@@ -144,6 +171,18 @@ Seed* Inventory::getSeedById(int id) const{
 
 }
 
+//vérifie si l'harvest existe déja dans le vector harvests et si oui retourne son index sinon retourne -1
+int Inventory::getHarvestById(int id) const{
+    for(int i=0;i<(int)harvests.size();i++){
+        if(harvests[i]->getId() == id){
+            return i;
+        }
+
+    }
+    return -1;
+
+}
+
 Tool* Inventory::getToolById(int id) const{
     for(int i=0;i<(int)tools.size();i++){
         if(tools[i]->getId() == id){
@@ -152,4 +191,12 @@ Tool* Inventory::getToolById(int id) const{
 
     }
     return nullptr;
+}
+
+int Inventory::calculateHarvestPrice() const{
+    int result = 0;
+    for(int i=0;i<(int)harvests.size();i++){
+        result += harvests[i]->getTotalPrice();
+    }
+    return result;
 }

@@ -1,7 +1,7 @@
 #include "Model/Item/Seeds/Mushroom.h"
 
 // CONSTRUCTEUR
-Mushroom::Mushroom(): Seed(5, "Mushroom", "Winter", 4, 3, 4, 1)
+Mushroom::Mushroom(): Seed(7, "Mushroom", "Winter", 4, 3, 4, 1)
 {
     //ctor
 }

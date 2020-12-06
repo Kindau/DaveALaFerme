@@ -3,6 +3,7 @@
 
 #include "Model/Player/Mover.h"
 #include "Model/Player/Wallet.h"
+#include "Model/Player/Inventory.h"
 #include "Model/Item/Tools/Tool.h"
 #include "Model/Item/Seeds/Seed.h"
 
@@ -10,7 +11,7 @@
 class Player
 {
     public:
-        Player(Wallet* _wallet, Mover* _mover, Tool* _tool=nullptr, Seed* _seed=nullptr);
+        Player(Tool* _tool=nullptr, Seed* _seed=nullptr);
         virtual ~Player();
         Player(const Player& other);
         Player& operator=(const Player& other);
@@ -36,8 +37,9 @@ class Player
     protected:
 
     private:
-        Wallet* wallet;
-        Mover* mover;
+        Wallet wallet;
+        Mover mover;
+        Inventory inventory;
         Tool* tool;
         Seed* seed;
 

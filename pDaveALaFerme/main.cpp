@@ -19,9 +19,8 @@ using namespace std;
 int main()
 {
     Calendar calendrier;
-    Wallet wallet;
-    Mover mover;
-    Player player(&wallet, &mover);
+    Player player;
+    cout<<player.str()<<endl;
 
     Map gameSpace("exempleFichier.txt");
     SFMLPlayer SfmlPlayer(&player);

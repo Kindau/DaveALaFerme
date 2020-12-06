@@ -10,15 +10,20 @@ class Harvest: public Item
 {
     private:
         int price ;
+        int nbHarvest;
 
     public:
-        Harvest(int id, string nom,int price);
+        Harvest(int id, string nom,int price, int nbHarvest=0);
         virtual ~Harvest();
         Harvest(const Harvest& other);
         Harvest& operator=(const Harvest& other);
         Harvest* clone() const{return new Harvest(*this);};
 
         string str()const;
+        int getTotalPrice() const;
+        void addOneHarvest();
+
+
 
 
 };

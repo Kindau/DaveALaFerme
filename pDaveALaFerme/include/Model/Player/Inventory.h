@@ -5,6 +5,15 @@
 #include "Model/Item/Tools/Tool.h"
 #include "Model/Item/Seeds/Seed.h"
 #include "Model/Item/Harvest/Harvest.h"
+#include "Model/Item/Seeds/Carrot.h"
+#include "Model/Item/Seeds/Eggplant.h"
+#include "Model/Item/Seeds/Endive.h"
+#include "Model/Item/Seeds/Lettuce.h"
+#include "Model/Item/Seeds/Mushroom.h"
+#include "Model/Item/Seeds/Pumpkin.h"
+#include "Model/Item/Seeds/Radish.h"
+#include "Model/Item/Seeds/Tomato.h"
+#include "Model/Item/Seeds/Zucchini.h"
 #include <vector>
 #include <string>
 
@@ -30,10 +39,13 @@ class Inventory
 
         void addTool(const Tool* tool);
         void addSeed(const Seed* seed);
-        void addHarvest(const Harvest* harvest);
+        void addHarvest(const Seed* seed);
         void removeAllHarvest();
-        void removeSeed(int id);
+        void addOneHarvest();
+        void removeOneSeed(int id);
+        void addOneSeed(int id);
         Seed* getSeedById(int id) const;
+        int getHarvestById(int id) const;
         Tool* getToolById(int id) const;
         int calculateHarvestPrice() const;
 };

@@ -1,7 +1,7 @@
 #include "Model/Item/Seeds/Lettuce.h"
 
 // CONSTRUCTEUR
-Lettuce::Lettuce(): Seed(5, "Lettuce", "Winter", 4, 3, 3, 1)
+Lettuce::Lettuce(): Seed(6, "Lettuce", "Winter", 4, 3, 3, 1)
 {
     //ctor
 }

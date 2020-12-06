@@ -1,6 +1,6 @@
 #include "Model/Item/Harvest/Harvest.h"
 
-Harvest::Harvest(int id, string nom, int price):Item(id, nom), price(price)
+Harvest::Harvest(int id, string nom, int price, int nbHarvest):Item(id, nom), price(price), nbHarvest(nbHarvest)
 {
     //ctor
 }
@@ -29,5 +29,13 @@ string Harvest::str()const{
     string rtn = Item::str();
     rtn += " "+ to_string(price);
     return rtn;
+}
+
+int Harvest::getTotalPrice() const{
+    return price * nbHarvest;
+}
+
+void Harvest::addOneHarvest(){
+    nbHarvest++;
 }
 

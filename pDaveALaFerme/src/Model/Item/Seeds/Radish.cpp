@@ -1,7 +1,7 @@
 #include "Model/Item/Seeds/Radish.h"
 
 // CONSTRUCTEUR
-Radish::Radish(): Seed(5, "Radish", "Winter", 4, 3, 0, 2)
+Radish::Radish(): Seed(9, "Radish", "Winter", 4, 3, 0, 2)
 {
     //ctor
 }

@@ -35,5 +35,10 @@ int Item::getId() const {
     return id;
 }
 
+string Item::getNom() const {
+    return nom;
+}
+
+
 
 
