@@ -33,6 +33,8 @@ class Player
 
         int getnbCase() const;
 
+        Inventory* getInventory() ;
+
 
     protected:
 

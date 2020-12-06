@@ -84,3 +84,6 @@ int Player::getnbCase() const{
     return mover.getnbCase();
 }
 
+Inventory* Player::getInventory(){
+    return &inventory;
+}
