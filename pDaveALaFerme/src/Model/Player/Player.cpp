@@ -58,3 +58,7 @@ void Player::addMoney(int ammount){
 void Player::spendMoney(int ammount){
     wallet->spendMoney(ammount);
 }
+
+int Player::getActualMoney() const{
+    return wallet->getMoney();
+}

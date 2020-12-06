@@ -15,6 +15,7 @@ class Wallet
 
         void addMoney(int ammount);
         void spendMoney(int ammount);
+        int getMoney() const;
         string str() const;
 
     protected:

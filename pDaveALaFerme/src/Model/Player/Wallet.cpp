@@ -36,6 +36,10 @@ void Wallet::spendMoney(int ammount){
     }
 }
 
+int Wallet::getMoney() const{
+    return money;
+}
+
 string Wallet::str() const{
     return "wallet: "+to_string(money);
 }

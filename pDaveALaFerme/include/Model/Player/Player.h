@@ -21,6 +21,7 @@ class Player
 
         void addMoney(int ammount);
         void spendMoney(int ammount);
+        int getActualMoney() const;
 
 
     protected:
@@ -28,6 +29,7 @@ class Player
     private:
         Wallet* wallet;
         Mover* mover;
+
 };
 
 #endif // PLAYER_H

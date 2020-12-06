@@ -22,6 +22,7 @@ int main()
     Wallet wallet;
     Mover mover;
     Player player(&wallet, &mover);
+
     Map gameSpace("exempleFichier.txt");
     SFMLPlayer SfmlPlayer(&player);
 
