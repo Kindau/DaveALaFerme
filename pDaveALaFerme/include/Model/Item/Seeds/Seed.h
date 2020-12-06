@@ -16,10 +16,11 @@ class Seed: public Tool
         int price ;
         int caseX ;
         int caseY ;
+        int nbSeeds;
 
     public:
         Seed();
-        Seed(int id, string nom,string plantingTime,int timeToGrow, int price, int caseX, int caseY);
+        Seed(int id, string nom,string plantingTime,int timeToGrow, int price, int caseX, int caseY, int nbSeeds = 0);
         virtual ~Seed();
         Seed(const Seed& other);
         Seed& operator=(const Seed& other);
@@ -38,6 +39,9 @@ class Seed: public Tool
         virtual string toolType()const{
             return "";
         }
+        void addSeed();
+        bool minusSeed();
+        int getNbSeeds() const;
 };
 
 #endif // SEED_H

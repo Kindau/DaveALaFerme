@@ -1,6 +1,6 @@
 #include "Model/Item/Seeds/Seed.h"
 
-Seed::Seed(int id, string nom, string plantingTime, int timeToGrow, int price, int caseX, int caseY):Tool(id, nom), plantingTime(plantingTime),timeToGrow(timeToGrow), price(price), caseX(caseX), caseY(caseY)
+Seed::Seed(int id, string nom, string plantingTime, int timeToGrow, int price, int caseX, int caseY, int nbSeeds):Tool(id, nom), plantingTime(plantingTime),timeToGrow(timeToGrow), price(price), caseX(caseX), caseY(caseY), nbSeeds(nbSeeds)
 {
     //ctor
 }
@@ -69,5 +69,26 @@ int Seed::getCaseX() const
 int Seed::getCaseY() const
 {
     return caseX ;
+}
+
+void Seed::addSeed() {
+    nbSeeds++;
+}
+
+//renvoie true si le nombre de seed est 0 après avoir reduit de 1 nbSeeds. Permet de savoir quand il faut déséquiper la seeds equipé au joueur.
+bool Seed::minusSeed() {
+    if(nbSeeds<=0){
+        return true;
+    }
+    nbSeeds--;
+    if(nbSeeds==0){
+        return true;
+    }
+    return false;
+
+}
+
+int Seed::getNbSeeds() const{
+    return nbSeeds;
 }
 
