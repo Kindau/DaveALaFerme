@@ -1,6 +1,6 @@
 #include "Model/Player/Mover.h"
 
-Mover::Mover(int _x, int _y):x(_x),y(_y)
+Mover::Mover(int _nbCase):nbCase(_nbCase)
 {
     //ctor
 }
@@ -13,35 +13,40 @@ Mover::~Mover()
 Mover::Mover(const Mover& other)
 {
     //copy ctor
-    x = other.x;
-    y = other.y;
+    nbCase = other.nbCase;
 }
 
 Mover& Mover::operator=(const Mover& rhs)
 {
     if (this == &rhs) return *this; // handle self assignment
     //assignment operator
-    x = rhs.x;
-    y = rhs.y;
+    nbCase = rhs.nbCase;
     return *this;
 }
 
 string Mover::str() const{
-    return "Mover : "+to_string(x)+to_string(y);
+    return "Mover : "+to_string(nbCase);
 }
 
 void Mover::moveDown() {
-    --y;
+    nbCase += 25;
 }
 
 void Mover::moveLeft(){
-    --x;
+    nbCase -= 1;
 }
 
 void Mover::moveRight(){
-    ++x;
+    nbCase += 1;
 }
 
 void Mover::moveUp(){
-    ++y;
+    nbCase -= 25;
 }
+
+int Mover::getnbCase() const{
+    return nbCase;
+}
+
+
+

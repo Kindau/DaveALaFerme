@@ -59,23 +59,23 @@ int main()
                 if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
                 {
                     SfmlPlayer.moveUp();
+
                 }
                 if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
                 {
                     SfmlPlayer.moveDown();
+
                 }
                 if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
                 {
                     SfmlPlayer.moveLeft();
+
                 }
                 if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
                 {
                     SfmlPlayer.moveRight();
                 }
-                if(sf::Keyboard::isKeyPresse(sf::Keyboard::Space)){
-                   // SfmlPlayer.getSprite()->getPosition()->
-                }
-
+                cout<<to_string(player.getnbCase()) <<endl;
             }
         }
         window.clear();

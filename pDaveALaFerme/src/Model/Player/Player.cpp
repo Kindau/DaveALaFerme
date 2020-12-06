@@ -1,6 +1,6 @@
 #include "Model/Player/Player.h"
 
-Player::Player(Wallet* _wallet, Mover* _mover):wallet(new Wallet(*_wallet)),mover(new Mover(*_mover))
+Player::Player(Wallet* _wallet, Mover* _mover,Tool* _tool,Seed* _seed):wallet(new Wallet(*_wallet)),mover(new Mover(*_mover)),tool(_tool),seed(_seed)
 {
     //ctor
 }
@@ -35,6 +35,24 @@ string Player::str() const{
     return "Player:\n"+wallet->str() +"\n"+ mover->str();
 }
 
+void Player::setTool(Tool* _tool){
+    seed = nullptr;
+    tool = _tool;
+}
+
+Tool* Player::getTool()const {
+    return tool;
+}
+
+void Player::setSeed(Seed* _seed){
+    tool = nullptr;
+    seed = _seed;
+}
+
+Seed* Player::getSeed()const {
+    return seed;
+}
+
 void Player::moveDown() {
     mover->moveDown();
 }
@@ -62,3 +80,8 @@ void Player::spendMoney(int ammount){
 int Player::getActualMoney() const{
     return wallet->getMoney();
 }
+
+int Player::getnbCase() const{
+    return mover->getnbCase();
+}
+

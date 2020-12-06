@@ -8,7 +8,7 @@ using std::to_string;
 class Mover
 {
     public:
-        Mover(int _x=0, int _y=0);
+        Mover(int _nbCase=0);
         virtual ~Mover();
         Mover(const Mover& other);
         Mover& operator=(const Mover& other);
@@ -20,11 +20,12 @@ class Mover
         void moveLeft();
         void moveRight();
 
+        int getnbCase() const;
+
     protected:
 
     private:
-        int x;
-        int y;
+        int nbCase;
 };
 
 #endif // MOVER_H

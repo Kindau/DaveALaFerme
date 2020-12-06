@@ -42,6 +42,7 @@ void SFMLPlayer::moveUp(){
         return;
     }
     sprite.move(sf::Vector2f(0,-40));
+    player->moveUp();
 }
 
 void SFMLPlayer::moveDown(){
@@ -49,6 +50,7 @@ void SFMLPlayer::moveDown(){
         return;
     }
     sprite.move(sf::Vector2f(0,40));
+    player->moveDown();
 }
 
 void SFMLPlayer::moveLeft(){
@@ -56,6 +58,7 @@ void SFMLPlayer::moveLeft(){
         return;
     }
     sprite.move(sf::Vector2f(-40,0));
+    player->moveLeft();
 }
 
 void SFMLPlayer::moveRight(){
@@ -63,4 +66,5 @@ void SFMLPlayer::moveRight(){
         return;
     }
     sprite.move(sf::Vector2f(40,0));
+    player->moveRight();
 }
