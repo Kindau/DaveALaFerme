@@ -3,17 +3,17 @@
 
 //Import des classes
 
-#include <Market.h>
-#include <Path.h>
-#include <Tile.h>
-#include <Wallet.h>
-#include <Mover.h>
-#include <Player.h>
-#include <Calendar.h>
-#include <Map.h>
-#include "SFMLMap.h"
-#include "SFMLOclock.h"
-#include "SFMLPlayer.h"
+#include <Model/Ground/Market.h>
+#include <Model/Ground/Path.h>
+#include <Model/Ground/Tiles/Tile.h>
+#include <Model/Player/Wallet.h>
+#include <Model/Player/Mover.h>
+#include <Model/Player/Player.h>
+#include <Model/Calendar/Calendar.h>
+#include <Model/Map.h>
+#include "View/SFMLMap.h"
+#include "View/SFMLOclock.h"
+#include "View/SFMLPlayer.h"
 
 using namespace std;
 int main()
