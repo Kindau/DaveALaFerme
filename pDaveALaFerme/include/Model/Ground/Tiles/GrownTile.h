@@ -7,6 +7,10 @@
 #include "Model/Item/Seeds/Seed.h"
 #include "Model/Item/Tools/Tool.h"
 
+//Cette classe représente l'un des états possibles d'une Tile
+//Ici, on représent une tuile dont la plante a terminé sa pousse et est prête a être récoltée. Son prochain état ne peut être qu'une Tile Vide
+
+
 class GrownTile : public StateTile
 {
     private:

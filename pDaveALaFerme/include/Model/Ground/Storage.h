@@ -4,8 +4,11 @@
 #include "Model/Ground/Ground.h"
 #include "Model/Ground/IInteractive.h"
 
+//Cette classe "implémente" Ground
+//Elle permet au joueur de changer ses graines actives et de se ravitailler automatiquement en graines, moyennant finance
 
-class Storage : public Ground//, public IInteractive
+
+class Storage : public Ground
 {
     public:
         // ================================================================

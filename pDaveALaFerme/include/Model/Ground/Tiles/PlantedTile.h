@@ -8,6 +8,12 @@
 #include "Model/Item/Seeds/Seed.h"
 #include "Model/Item/Tools/Tool.h"
 
+//Cette classe représente l'un des états possibles d'une Tile
+//Ici, on représente une tuile qui a été plantée, mais dont la graine n'a pas encore été arrosée lors de la journée actuelle (en jeu)
+//Son prochain état possible est SprinkledTile lors de son arrosage
+
+
+
 class PlantedTile : public StateTile
 {
     private:

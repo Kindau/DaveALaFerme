@@ -34,7 +34,7 @@ Map::Map(Calendar* cal,Player* p,string fileName):calendrier(cal),player(p){
         for(int i = 1;i<= size_x+1;i++){//+1 pour le \n en fin de ligne dans le ficher texte
                 for(int j = 1;j<=size_y+1;j++){
                     mappingStream.get(c);
-                    //Construire dynamiquement
+                    //Construire dynamiquement les cases
                     if(c == '\n'){
 
                     }

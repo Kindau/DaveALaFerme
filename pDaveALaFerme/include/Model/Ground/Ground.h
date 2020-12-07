@@ -7,9 +7,15 @@
 
 using std::string;
 
+//Cette classe est une classe virtuelle absolue,
+//Elle permet le polymorphisme des différentes "cases" possible (Case n'est pas objet réel, mais plus une réprésentation)
+
+
 //Abstract class
-class Ground:public GameObject//, public IInteractive
+class Ground:public GameObject
 {
+
+    //Représente les coordonnées de la case dans un tableau 2D (Ce tableau est fictif, et ne sers qu'a mieux représenter l'affichage)
     private:
         int x;
         int y;

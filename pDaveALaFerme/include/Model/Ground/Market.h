@@ -5,6 +5,10 @@
 #include "Model/Ground/IInteractive.h"
 #include "Model/Player/Player.h"
 
+//Cette classe "implémente" Ground
+//Market permet au joueur de vendre ses récoltes
+
+
 class Market : public Ground//, public IInteractive
 {
 

@@ -7,6 +7,10 @@
 #include "Model/Item/Seeds/Seed.h"
 #include "Model/Item/Tools/Tool.h"
 
+
+//Cette classe représente l'un des états possibles d'une Tile
+//On représente ici une case Vide, son prochain état ne peut être que d'être labourée
+
 class EmptyTile : public StateTile
 {
     private:

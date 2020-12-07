@@ -14,6 +14,10 @@
 //TO REMOVE IF REMOVING STR
 using std::string;
 
+
+//La classe Tile représente des tuiles (cases) qui vont servir délimeter les "zones" de jeu.
+//Ces tuiles pourront avoir différents états possibles (Vide,Chemin,Magasin,Maison,Terrain labouré,ect...)
+
 //                          Implémente l'interface IObserver
 class Tile : public Ground, public IObserver //, public IInteractive
 {

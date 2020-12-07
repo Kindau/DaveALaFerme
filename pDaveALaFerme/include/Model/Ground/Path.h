@@ -5,6 +5,11 @@
 #include "Model/Ground/IInteractive.h"
 #include <iostream>
 
+//Cette Classe "implémente" Ground
+//Cette classe permet au joueur de marcher sur des cases, sur ces-dites cases, aucune interaction n'est possible,
+//Il s'agit de la représentation d'un chemin
+
+
 class Path : public Ground//, public IInteractive
 {
     public:

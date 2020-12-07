@@ -12,6 +12,13 @@
 #include "Model/Calendar/IObserver.h"
 #include "Model/Calendar/ISubject.h"
 
+//Cette classe représente l'un des états possibles d'une Tile
+//Ici, on représente une tuile plantée qui vient d'être arrosée aujourd'hui (en jeu).
+//Ses prochains états sont : GrownTile si c'est son dernier jour de pousse, ou PlantedTile sinon
+
+
+
+
 class SprinkledTile : public StateTile, public IObserver
 {
     private:

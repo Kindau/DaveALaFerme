@@ -8,6 +8,11 @@
 
 using namespace std;
 
+
+//Cette classe permet de gérer les différents états d'une tuile.
+//Il s'agit d'une classe abstraite (virtuelle absolue) afin de faciliter le polymorphisme
+
+
 class StateTile
 {
     public:

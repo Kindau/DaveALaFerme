@@ -3,6 +3,9 @@
 #include <SFML/Graphics.hpp>
 #include "Model/Map.h"
 
+
+//Classe graphique affichant le terrain de jeu
+
 class SFMLMap : public sf::Drawable, public sf::Transformable
 {
     public:

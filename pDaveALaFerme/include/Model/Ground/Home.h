@@ -5,10 +5,14 @@
 #include "Model/Ground/IInteractive.h"
 #include "Model/Calendar/Calendar.h"
 
+//Cette classe implémente Ground
+//La classe Home permet lors de l'interaction avec le joueur de passer au jour suivant
+
+
 class Home : public Ground //,public IInteractive
 {
 private:
-    Calendar* calendar;
+    Calendar* calendar; //Utilisé pour passer les journées lors de la partie
 
     public:
         // ================================================================
@@ -31,7 +35,7 @@ private:
         Ground* clone()const{
             return new Home(*this);
         }
-
+        //Ceci permet de passer le jour suivant en passant par le Calendar
         virtual bool interact(Tool* t);
         virtual bool interact(Seed* s){return false;}
 };
