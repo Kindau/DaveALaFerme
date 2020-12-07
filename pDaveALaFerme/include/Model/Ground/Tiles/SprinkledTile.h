@@ -46,6 +46,10 @@ class SprinkledTile : public StateTile, public IObserver
 
         bool interact(Tool* t);
         bool interact(Seed* s);
+
+        Seed* getSeed()const{
+                return plantedSeed;
+        }
 };
 
 #endif // SPRINKLEDTILE_H

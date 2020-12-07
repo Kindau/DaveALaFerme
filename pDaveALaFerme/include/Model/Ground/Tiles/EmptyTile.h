@@ -32,7 +32,9 @@ class EmptyTile : public StateTile
         string str()const{
             return "Empty";
         }
-
+        Seed* getSeed()const{
+            return nullptr;
+        }
         //For update
         void update();
 

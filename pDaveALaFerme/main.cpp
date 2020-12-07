@@ -201,13 +201,9 @@ int main()
                                                 player.spendMoney((player.getInventory()->getSeedById(3)->getPrice()) * 5);
                                                 player.getInventory()->getSeedById(3)->addSeed(5);
                                                 player.setSeed(player.getInventory()->getSeedById(3));
-                                                cout<<player.getSeed()->getNom()<<endl;
-                                                cout<<to_string(player.getSeed()->getNbSeeds())<<endl;
-                                                cout<<to_string(player.getInventory()->getSeedById(3)->getPrice())<<endl;
                                                 windowStorageInside.close();
                                                 break;
                                             case 2  :
-                                                cout<<"2"<<endl;
                                                 if(player.getActualMoney() < (player.getInventory()->getSeedById(4)->getPrice()) * 5){
 
                                                     break;
@@ -215,12 +211,9 @@ int main()
                                                 player.spendMoney((player.getInventory()->getSeedById(4)->getPrice()) * 5);
                                                 player.getInventory()->getSeedById(4)->addSeed(5);
                                                 player.setSeed(player.getInventory()->getSeedById(4));
-                                                cout<<player.getSeed()->getNom()<<endl;
-                                                cout<<to_string(player.getSeed()->getNbSeeds())<<endl;
                                                 windowStorageInside.close();
                                                 break;
                                             case 3  :
-                                                cout<<"3"<<endl;
                                                 if(player.getActualMoney() < (player.getInventory()->getSeedById(5)->getPrice()) * 5){
 
                                                     break;
@@ -228,8 +221,6 @@ int main()
                                                 player.spendMoney((player.getInventory()->getSeedById(5)->getPrice()) * 5);
                                                 player.getInventory()->getSeedById(5)->addSeed(5);
                                                 player.setSeed(player.getInventory()->getSeedById(5));
-                                                cout<<player.getSeed()->getNom()<<endl;
-                                                cout<<to_string(player.getSeed()->getNbSeeds())<<endl;
                                                 windowStorageInside.close();
                                                 break;
                                             case 4  :
@@ -240,12 +231,9 @@ int main()
                                                 player.spendMoney((player.getInventory()->getSeedById(6)->getPrice()) * 5);
                                                 player.getInventory()->getSeedById(6)->addSeed(5);
                                                 player.setSeed(player.getInventory()->getSeedById(6));
-                                                cout<<player.getSeed()->getNom()<<endl;
-                                                cout<<to_string(player.getSeed()->getNbSeeds())<<endl;
                                                 windowStorageInside.close();
                                                 break;
                                             case 5  :
-                                                cout<<"5"<<endl;
                                                 if(player.getActualMoney() < (player.getInventory()->getSeedById(7)->getPrice()) * 5){
 
                                                     break;
@@ -253,12 +241,10 @@ int main()
                                                 player.spendMoney((player.getInventory()->getSeedById(7)->getPrice()) * 5);
                                                 player.getInventory()->getSeedById(7)->addSeed(5);
                                                 player.setSeed(player.getInventory()->getSeedById(7));
-                                                cout<<player.getSeed()->getNom()<<endl;
-                                                cout<<to_string(player.getSeed()->getNbSeeds())<<endl;
                                                 windowStorageInside.close();
                                                 break;
                                             case 6  :
-                                                cout<<"6"<<endl;
+
                                                 if(player.getActualMoney() < (player.getInventory()->getSeedById(8)->getPrice()) * 5){
 
                                                     break;
@@ -266,12 +252,11 @@ int main()
                                                 player.spendMoney((player.getInventory()->getSeedById(8)->getPrice()) * 5);
                                                 player.getInventory()->getSeedById(8)->addSeed(5);
                                                 player.setSeed(player.getInventory()->getSeedById(8));
-                                                cout<<player.getSeed()->getNom()<<endl;
-                                                cout<<to_string(player.getSeed()->getNbSeeds())<<endl;
+
                                                 windowStorageInside.close();
                                                 break;
                                             case 7  :
-                                                cout<<"7"<<endl;
+
                                                 if(player.getActualMoney() < (player.getInventory()->getSeedById(9)->getPrice()) * 5){
 
                                                     break;
@@ -279,12 +264,11 @@ int main()
                                                 player.spendMoney((player.getInventory()->getSeedById(9)->getPrice()) * 5);
                                                 player.getInventory()->getSeedById(9)->addSeed(5);
                                                 player.setSeed(player.getInventory()->getSeedById(9));
-                                                cout<<player.getSeed()->getNom()<<endl;
-                                                cout<<to_string(player.getSeed()->getNbSeeds())<<endl;
+
                                                 windowStorageInside.close();
                                                 break;
                                             case 8  :
-                                                cout<<"8"<<endl;
+
                                                 if(player.getActualMoney() < (player.getInventory()->getSeedById(10)->getPrice()) * 5){
 
                                                     break;
@@ -292,8 +276,7 @@ int main()
                                                 player.spendMoney((player.getInventory()->getSeedById(10)->getPrice()) * 5);
                                                 player.getInventory()->getSeedById(10)->addSeed(5);
                                                 player.setSeed(player.getInventory()->getSeedById(10));
-                                                cout<<player.getSeed()->getNom()<<endl;
-                                                cout<<to_string(player.getSeed()->getNbSeeds())<<endl;
+
                                                 windowStorageInside.close();
                                                 break;
                                             case 9  :
@@ -304,12 +287,11 @@ int main()
                                                 player.spendMoney((player.getInventory()->getSeedById(11)->getPrice()) * 5);
                                                 player.getInventory()->getSeedById(11)->addSeed(5);
                                                 player.setSeed(player.getInventory()->getSeedById(11));
-                                                cout<<player.getSeed()->getNom()<<endl;
-                                                cout<<to_string(player.getSeed()->getNbSeeds())<<endl;
+
                                                 windowStorageInside.close();
                                                 break;
                                             case 10  :
-                                                cout<<"10"<<endl;
+
                                                 windowStorageInside.close();
                                                 break;
 
@@ -317,7 +299,7 @@ int main()
                                                 cout<<"error"<<endl;
                                         }
 
-
+                                    monneyDisplayer.loadMonney();
                                     }
                                     windowStorageInside.clear(sf::Color(100, 100, 200));
                                     windowStorageInside.draw(*(SfmlStorageSeeds.getCarrotSprite()));

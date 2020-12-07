@@ -26,6 +26,7 @@ class StateTile
         virtual void update()=0;
         virtual void handle() = 0;
         virtual string str()const =0;
+        virtual Seed* getSeed()const=0;
 
         virtual bool interact(Tool* t)=0;
         virtual bool interact(Seed* s)=0;

@@ -43,6 +43,9 @@ class PlantedTile : public StateTile
 
         bool interact(Tool* t);
         bool interact(Seed* s);
+        Seed* getSeed()const{
+                return plantedSeed;
+        }
 
 };
 

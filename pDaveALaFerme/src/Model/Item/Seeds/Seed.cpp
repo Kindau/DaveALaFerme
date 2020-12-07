@@ -68,7 +68,7 @@ int Seed::getCaseX() const
 }
 int Seed::getCaseY() const
 {
-    return caseX ;
+    return caseY ;
 }
 
 void Seed::addSeed(int nb) {

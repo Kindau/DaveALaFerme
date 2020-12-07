@@ -37,6 +37,10 @@ class GrownTile : public StateTile
         bool interact(Seed* s);
 
         void update();
+
+        virtual Seed* getSeed()const{
+            return plantedSeed;
+        }
 };
 
 #endif // GROWNTILE_H

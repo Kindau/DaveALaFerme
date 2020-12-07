@@ -51,8 +51,8 @@ bool SFMLMap::load(sf::Vector2u tileSize){ //Ici : tileSize est un vector qui co
                     caseY = 0;
                 }
                 else if(typeSoil == "Grown"){
-                    caseX = 5;
-                    caseY = 0;
+                    caseX = t->getState()->getSeed()->getCaseX();
+                    caseY = t->getState()->getSeed()->getCaseY();
                 }
                 else if(typeSoil == "Planted"){
                     caseX = 3;

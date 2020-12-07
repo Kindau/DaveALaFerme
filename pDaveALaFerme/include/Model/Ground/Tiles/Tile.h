@@ -68,6 +68,10 @@ class Tile : public Ground, public IObserver //, public IInteractive
             return calendar;
         }
 
+        StateTile* getState()const{
+            return _state;
+        }
+
         Ground* clone()const;
 
         //temp for test :
