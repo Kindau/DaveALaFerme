@@ -4,6 +4,7 @@
 #include "Model/Calendar/IObserver.h"
 
 //Equivalent à une interface (observabble)
+// L'interface ISubject permet de mettre en place un Design Pattern Observer, elle devras être implementée dans les classes pourvant etre observée par un observateur.
 class ISubject
 {
     public:

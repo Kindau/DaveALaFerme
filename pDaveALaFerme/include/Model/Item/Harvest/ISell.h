@@ -4,7 +4,7 @@
 
 using std::string;
 
-
+// INUTILE, A SUPPRIMER
 class ISell
 {
     private:

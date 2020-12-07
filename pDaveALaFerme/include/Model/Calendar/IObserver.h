@@ -6,6 +6,7 @@
 
 using std::string;
 //Equivalent à une interface java ==> pas de constructeur // Laissé dans la déclaration pour forme canonique
+// L'interface IObserver permet de mettre en place un Design Pattern Observer, elle devras être implementée dans les classes pour vant observer un subject
 class IObserver
 {
     public:

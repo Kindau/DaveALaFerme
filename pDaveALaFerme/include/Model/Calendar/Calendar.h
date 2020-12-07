@@ -10,6 +10,8 @@
 using std::string;
 using std::to_string;
 
+// La classe Calendar permet de d'avoir une date et une saison pour pouvoir savoir si tels ou tels graine peut être planté. Il implemente ISubject pour permettre aus tiles de l'observer et
+// de faire avancer la pousse des graines suivant l'avancement des jours dans le Calendar.
 class Calendar : public ISubject
 {
     private:

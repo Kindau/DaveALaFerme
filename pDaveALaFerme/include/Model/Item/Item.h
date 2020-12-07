@@ -6,6 +6,7 @@
 using std::string;
 using std::to_string;
 
+// classe mère implémentée par tous les élément pouvant se trouver dans l'inventaire
 class Item
 {
     private:

@@ -4,6 +4,7 @@
 #include <Model/Calendar/Seasons/StateSeason.h>
 #include <Model/Calendar/Seasons/Season.h>
 
+// Cette classe est l'état d'une saison lorsque c'est l'hiver
 class Winter : public StateSeason
 {
     private:
@@ -16,6 +17,7 @@ class Winter : public StateSeason
         Winter(const Winter& other);
         Winter& operator=(const Winter& other);
 
+        // set le state de season a Spring
         void getNextSeason();
         string str()const;
 

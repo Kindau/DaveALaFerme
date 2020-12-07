@@ -3,7 +3,7 @@
 
 #include "Model/Item/Seeds/Seed.h"
 
-
+// Permet la création d'un objet Lettuce en fixant les valeur de Seed grâce a son constructeur pour qu'elle ai le bon nom, id, caseX, caseY, ect...
 class Lettuce : public Seed
 {
     public:

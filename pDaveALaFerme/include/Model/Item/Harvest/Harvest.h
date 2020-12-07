@@ -20,7 +20,9 @@ class Harvest: public Item
         Harvest* clone() const{return new Harvest(*this);};
 
         string str()const;
+        // Permet de récuperer le prix de vente total pour tous les harvest ( price * nbHarvest)
         int getTotalPrice() const;
+        // Augmente nbHarvest de 1.
         void addOneHarvest();
 
 

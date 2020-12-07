@@ -4,6 +4,7 @@
 #include<Model/Calendar/Seasons/StateSeason.h>
 #include<Model/Calendar/Seasons/Season.h>
 
+// Cette classe est l'état d'une saison lorsque c'est l'automne
 class Autumn:public StateSeason
 {
     private:
@@ -17,6 +18,7 @@ class Autumn:public StateSeason
         Autumn(const Autumn& other);
         Autumn& operator=(const Autumn& other);
 
+        // set le state de season a Winter
         void getNextSeason();
         string str()const;
 

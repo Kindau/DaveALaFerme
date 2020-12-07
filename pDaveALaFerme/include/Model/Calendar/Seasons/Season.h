@@ -3,7 +3,7 @@
 
 #include <Model/Calendar/Seasons/StateSeason.h>
 
-
+// la season contiens un attribut StateSeason* qui pointe vers la saison actuel. Cette saison changeras dynamiquement grace a un DesignPatern state.
 class Season
 {
     private:

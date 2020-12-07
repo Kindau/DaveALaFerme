@@ -2,6 +2,8 @@
 #define TOOL_H
 #include "Model/Item/Item.h"
 
+
+// définis un Item équipable et utilisable par le player
 class Tool: public Item
 {
     private:
