@@ -41,7 +41,7 @@ class Seed: public Tool
         virtual string toolType()const{
             return "";
         }
-        void addSeed();
+        void addSeed(int nb);
         bool minusSeed();
         int getNbSeeds() const;
 };

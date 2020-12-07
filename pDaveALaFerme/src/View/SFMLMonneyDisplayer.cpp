@@ -1,4 +1,4 @@
-#include "SFMLMonneyDisplayer.h"
+#include "View/SFMLMonneyDisplayer.h"
 #include <string>
 #include <iostream>
 

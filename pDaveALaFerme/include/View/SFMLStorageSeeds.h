@@ -9,6 +9,10 @@ class SFMLStorageSeeds
     private:
         Player *player;
 
+        // int utilisé pour savoir ce qu'il y a été selectionné dans le menu
+        int idSelected;
+
+        // déclaration des Texture des sprite
         sf::Texture carrotTexture;
         sf::Texture eggplantTexture;
         sf::Texture endiveTexture;
@@ -21,6 +25,7 @@ class SFMLStorageSeeds
         sf::Texture storageTexture;
         sf::Texture contoursTexture;
 
+        // déclaration des Sprite
         sf::Sprite carrotSprite;
         sf::Sprite eggplantSprite;
         sf::Sprite endiveSprite;
@@ -33,6 +38,7 @@ class SFMLStorageSeeds
         sf::Sprite storageSprite;
         sf::Sprite contoursSprite;
 
+        // déclaration des Textes affichant le nombre de graines
         sf::Text carrotText;
         sf::Text eggplantText;
         sf::Text endiveText;
@@ -81,6 +87,8 @@ class SFMLStorageSeeds
         void moveUp();
 
         void loadText();
+
+        int getIdSelected() const;
 };
 
 #endif // SFMLSTORAGESEEDS_H

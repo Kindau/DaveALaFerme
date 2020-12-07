@@ -155,7 +155,7 @@ void Inventory::removeOneSeed(int id){
 void Inventory::addOneSeed(int id){
     for(int i=0;i<(int)seeds.size();i++){
         if(seeds[i]->getId() == id){
-            seeds[i]->addSeed();
+            seeds[i]->addSeed(1);
             return;
         }
 
@@ -167,7 +167,7 @@ void Inventory::addOneSeed(int id){
 Seed* Inventory::getSeedById(int id) const{
     for(int i=0;i<(int)seeds.size();i++){
         if(seeds[i]->getId() == id){
-            return seeds[i]->clone();
+            return seeds[i];
         }
 
     }

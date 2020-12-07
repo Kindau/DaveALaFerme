@@ -2,7 +2,11 @@
 
 SFMLStorageSeeds::SFMLStorageSeeds()
 {
+    // de base la case 10 est selectionné
+    idSelected = 10;
     loadImages();
+    //loadText();
+
 }
 
 SFMLStorageSeeds::~SFMLStorageSeeds()
@@ -114,23 +118,29 @@ sf::Sprite* SFMLStorageSeeds::getContoursSprite() {return &contoursSprite;}
 void SFMLStorageSeeds::moveLeft(){
     if (contoursSprite.getPosition().x - 190 < 0) {return;}
     contoursSprite.move(sf::Vector2f(-190,0));
+    idSelected -= 1;
 }
 
 void SFMLStorageSeeds::moveRight(){
     if (contoursSprite.getPosition().x + 190 > 810) {return;}
     contoursSprite.move(sf::Vector2f(190,0));
+    idSelected += 1;
 }
 
 void SFMLStorageSeeds::moveDown(){
     if (contoursSprite.getPosition().y + 280 > 600) {return;}
     contoursSprite.move(sf::Vector2f(0,280));
+    idSelected += 5;
 }
 
 void SFMLStorageSeeds::moveUp(){
     if (contoursSprite.getPosition().y - 280 < 0) {return;}
     contoursSprite.move(sf::Vector2f(0,-280));
+    idSelected -=5;
 }
 
+
+//show nb seeds
 void SFMLStorageSeeds::loadText() {
     sf::Font font;
     if (!font.loadFromFile("Font/arial.ttf")) {return;}
@@ -165,15 +175,19 @@ void SFMLStorageSeeds::loadText() {
     tomatoText.setCharacterSize(CHARACTERSIZE);
     zucchiniText.setCharacterSize(CHARACTERSIZE);
 
-    carrotText.setPosition(sf::Vector2f(35,60));
-    eggplantText.setPosition(sf::Vector2f(415,60));
-    endiveText.setPosition(sf::Vector2f(605,60));
-    lettuceText.setPosition(sf::Vector2f(795,60));
-    mushroomText.setPosition(sf::Vector2f(35,340));
-    pumpkinText.setPosition(sf::Vector2f(415,340));
-    radishText.setPosition(sf::Vector2f(605,340));
-    tomatoText.setPosition(sf::Vector2f(795,340));
-    zucchiniText.setPosition(sf::Vector2f(35,340));
+    carrotText.setPosition(sf::Vector2f(35,330));
+    eggplantText.setPosition(sf::Vector2f(415,330));
+    endiveText.setPosition(sf::Vector2f(605,330));
+    lettuceText.setPosition(sf::Vector2f(795,330));
+    mushroomText.setPosition(sf::Vector2f(35,590));
+    pumpkinText.setPosition(sf::Vector2f(415,590));
+    radishText.setPosition(sf::Vector2f(605,590));
+    tomatoText.setPosition(sf::Vector2f(795,590));
+    zucchiniText.setPosition(sf::Vector2f(35,590));
+}
+
+int SFMLStorageSeeds::getIdSelected() const {
+    return idSelected;
 }
 
 sf::Text SFMLStorageSeeds::getCarrotText(){return carrotText;}

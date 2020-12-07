@@ -71,8 +71,8 @@ int Seed::getCaseY() const
     return caseX ;
 }
 
-void Seed::addSeed() {
-    nbSeeds++;
+void Seed::addSeed(int nb) {
+    nbSeeds = nbSeeds + nb;
 }
 
 //renvoie true si le nombre de seed est 0 après avoir reduit de 1 nbSeeds. Permet de savoir quand il faut déséquiper la seeds equipé au joueur.

@@ -51,8 +51,9 @@ int main()
     //Mettre par défaut la hoe comme Tool et la carotte par défaut
     player.setTool(hoe);
     player.setSeed(carrot);
-    player.getSeed()->addSeed();
-    player.getSeed()->addSeed();
+    player.getSeed()->addSeed(2);
+    player.addMoney(1000);
+
 
     //Création de la carte et mise en place des tuiles selons un carte dans un fichier
     Map gameSpace(&calendrier,&player,"exempleFichier.txt");
@@ -185,6 +186,138 @@ int main()
                                     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
                                     {
                                         SfmlStorageSeeds.moveUp();
+                                    }
+                                    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
+                                    {
+                                        // vérifie la case selectionner et achete plus rajoute les graines a l'inventaire.
+
+                                        switch(SfmlStorageSeeds.getIdSelected()) {
+                                            case 1  :
+
+                                                if(player.getActualMoney() < (player.getInventory()->getSeedById(3)->getPrice()) * 5){
+
+                                                    break;
+                                                }
+                                                player.spendMoney((player.getInventory()->getSeedById(3)->getPrice()) * 5);
+                                                player.getInventory()->getSeedById(3)->addSeed(5);
+                                                player.setSeed(player.getInventory()->getSeedById(3));
+                                                cout<<player.getSeed()->getNom()<<endl;
+                                                cout<<to_string(player.getSeed()->getNbSeeds())<<endl;
+                                                cout<<to_string(player.getInventory()->getSeedById(3)->getPrice())<<endl;
+                                                windowStorageInside.close();
+                                                break;
+                                            case 2  :
+                                                cout<<"2"<<endl;
+                                                if(player.getActualMoney() < (player.getInventory()->getSeedById(4)->getPrice()) * 5){
+
+                                                    break;
+                                                }
+                                                player.spendMoney((player.getInventory()->getSeedById(4)->getPrice()) * 5);
+                                                player.getInventory()->getSeedById(4)->addSeed(5);
+                                                player.setSeed(player.getInventory()->getSeedById(4));
+                                                cout<<player.getSeed()->getNom()<<endl;
+                                                cout<<to_string(player.getSeed()->getNbSeeds())<<endl;
+                                                windowStorageInside.close();
+                                                break;
+                                            case 3  :
+                                                cout<<"3"<<endl;
+                                                if(player.getActualMoney() < (player.getInventory()->getSeedById(5)->getPrice()) * 5){
+
+                                                    break;
+                                                }
+                                                player.spendMoney((player.getInventory()->getSeedById(5)->getPrice()) * 5);
+                                                player.getInventory()->getSeedById(5)->addSeed(5);
+                                                player.setSeed(player.getInventory()->getSeedById(5));
+                                                cout<<player.getSeed()->getNom()<<endl;
+                                                cout<<to_string(player.getSeed()->getNbSeeds())<<endl;
+                                                windowStorageInside.close();
+                                                break;
+                                            case 4  :
+                                                if(player.getActualMoney() < (player.getInventory()->getSeedById(6)->getPrice()) * 5){
+
+                                                    break;
+                                                }
+                                                player.spendMoney((player.getInventory()->getSeedById(6)->getPrice()) * 5);
+                                                player.getInventory()->getSeedById(6)->addSeed(5);
+                                                player.setSeed(player.getInventory()->getSeedById(6));
+                                                cout<<player.getSeed()->getNom()<<endl;
+                                                cout<<to_string(player.getSeed()->getNbSeeds())<<endl;
+                                                windowStorageInside.close();
+                                                break;
+                                            case 5  :
+                                                cout<<"5"<<endl;
+                                                if(player.getActualMoney() < (player.getInventory()->getSeedById(7)->getPrice()) * 5){
+
+                                                    break;
+                                                }
+                                                player.spendMoney((player.getInventory()->getSeedById(7)->getPrice()) * 5);
+                                                player.getInventory()->getSeedById(7)->addSeed(5);
+                                                player.setSeed(player.getInventory()->getSeedById(7));
+                                                cout<<player.getSeed()->getNom()<<endl;
+                                                cout<<to_string(player.getSeed()->getNbSeeds())<<endl;
+                                                windowStorageInside.close();
+                                                break;
+                                            case 6  :
+                                                cout<<"6"<<endl;
+                                                if(player.getActualMoney() < (player.getInventory()->getSeedById(8)->getPrice()) * 5){
+
+                                                    break;
+                                                }
+                                                player.spendMoney((player.getInventory()->getSeedById(8)->getPrice()) * 5);
+                                                player.getInventory()->getSeedById(8)->addSeed(5);
+                                                player.setSeed(player.getInventory()->getSeedById(8));
+                                                cout<<player.getSeed()->getNom()<<endl;
+                                                cout<<to_string(player.getSeed()->getNbSeeds())<<endl;
+                                                windowStorageInside.close();
+                                                break;
+                                            case 7  :
+                                                cout<<"7"<<endl;
+                                                if(player.getActualMoney() < (player.getInventory()->getSeedById(9)->getPrice()) * 5){
+
+                                                    break;
+                                                }
+                                                player.spendMoney((player.getInventory()->getSeedById(9)->getPrice()) * 5);
+                                                player.getInventory()->getSeedById(9)->addSeed(5);
+                                                player.setSeed(player.getInventory()->getSeedById(9));
+                                                cout<<player.getSeed()->getNom()<<endl;
+                                                cout<<to_string(player.getSeed()->getNbSeeds())<<endl;
+                                                windowStorageInside.close();
+                                                break;
+                                            case 8  :
+                                                cout<<"8"<<endl;
+                                                if(player.getActualMoney() < (player.getInventory()->getSeedById(10)->getPrice()) * 5){
+
+                                                    break;
+                                                }
+                                                player.spendMoney((player.getInventory()->getSeedById(10)->getPrice()) * 5);
+                                                player.getInventory()->getSeedById(10)->addSeed(5);
+                                                player.setSeed(player.getInventory()->getSeedById(10));
+                                                cout<<player.getSeed()->getNom()<<endl;
+                                                cout<<to_string(player.getSeed()->getNbSeeds())<<endl;
+                                                windowStorageInside.close();
+                                                break;
+                                            case 9  :
+                                                if(player.getActualMoney() < (player.getInventory()->getSeedById(11)->getPrice()) * 5){
+
+                                                    break;
+                                                }
+                                                player.spendMoney((player.getInventory()->getSeedById(11)->getPrice()) * 5);
+                                                player.getInventory()->getSeedById(11)->addSeed(5);
+                                                player.setSeed(player.getInventory()->getSeedById(11));
+                                                cout<<player.getSeed()->getNom()<<endl;
+                                                cout<<to_string(player.getSeed()->getNbSeeds())<<endl;
+                                                windowStorageInside.close();
+                                                break;
+                                            case 10  :
+                                                cout<<"10"<<endl;
+                                                windowStorageInside.close();
+                                                break;
+
+                                            default :
+                                                cout<<"error"<<endl;
+                                        }
+
+
                                     }
                                     windowStorageInside.clear(sf::Color(100, 100, 200));
                                     windowStorageInside.draw(*(SfmlStorageSeeds.getCarrotSprite()));

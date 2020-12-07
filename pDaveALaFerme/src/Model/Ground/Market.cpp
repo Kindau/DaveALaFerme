@@ -55,5 +55,6 @@ bool Market::interact(Tool* t){
     player->getInventory()->removeAllHarvest();
     //Ajoute de l'argent au portefeuille du joueur
     player->addMoney(paycheck);
+
     return true;
 }
