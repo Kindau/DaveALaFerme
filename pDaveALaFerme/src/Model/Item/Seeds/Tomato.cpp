@@ -1,7 +1,7 @@
 #include "Model/Item/Seeds/Tomato.h"
 
 // CONSTRUCTEUR
-Tomato::Tomato(): Seed(10, "Tomato", "Winter", 4, 3, 1, 2)
+Tomato::Tomato(): Seed(10, "Tomato", "Winter", 10, 15, 1, 2)
 {
     //ctor
 }

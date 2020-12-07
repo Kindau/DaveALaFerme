@@ -1,7 +1,7 @@
 #include "Model/Item/Seeds/Zucchini.h"
 
 // CONSTRUCTEUR
-Zucchini::Zucchini(): Seed(11, "Zucchini", "Winter", 4, 3, 0, 1)
+Zucchini::Zucchini(): Seed(11, "Zucchini", "Winter", 7, 6, 0, 1)
 {
     //ctor
 }

@@ -1,7 +1,7 @@
 #include "Model/Item/Seeds/Endive.h"
 
 // CONSTRUCTEUR
-Endive::Endive(): Seed(5, "Endive", "Summer", 4, 3, 2, 1)
+Endive::Endive(): Seed(5, "Endive", "Summer", 3, 7, 2, 1)
 {
     //ctor
 }
