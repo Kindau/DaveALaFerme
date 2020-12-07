@@ -47,6 +47,13 @@ string Market::str()const{
     return "$";
 }
 
-void Market::interact(){
-    //Ouvrir l'interface Market
+bool Market::interact(Tool* t){
+    //Ici l'outils n'a aucune importance
+    //Calcul de l'argent engendré par les récoltes (Objet Harvest)
+    int paycheck = player->getInventory()->calculateHarvestPrice();
+    //Suppression des objets Harvest de l'inventaire du joueur
+    player->getInventory()->removeAllHarvest();
+    //Ajoute de l'argent au portefeuille du joueur
+    player->addMoney(paycheck);
+    return true;
 }

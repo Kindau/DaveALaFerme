@@ -17,6 +17,7 @@
 #include "View/SFMLMap.h"
 #include "View/SFMLOclock.h"
 #include "View/SFMLPlayer.h"
+#include "View/SFMLMonneyDisplayer.h"
 #include "View/SFMLStorage.h"
 #include "View/SFMLStorageSeeds.h"
 #include "View/SFMLStorageTools.h"
@@ -34,7 +35,6 @@ int main()
 {
     Calendar calendrier;
     Player player;
-    cout<<player.str()<<endl;
 
     SFMLStorage SfmlStorage;
     SFMLStorageSeeds SfmlStorageSeeds;
@@ -67,11 +67,19 @@ int main()
     sf::RenderWindow windowStorage;
     sf::RenderWindow windowStorageInside;
 
-    //Création de l'affichage
+
+    //Création de l'affichage tête haute
     SFMLOclock clock(&calendrier);
+    SFMLMonneyDisplayer monneyDisplayer(&player);
+    monneyDisplayer.loadMonney();
+
     //Ajout de l'"horloge" à la liste des observateur de Calendrier
     clock.subscribe(&calendrier);
     clock.displayDate();
+
+
+
+
 
     while (window.isOpen())
     {
@@ -82,15 +90,6 @@ int main()
             {
                 window.close();
             }
-            /*if (event.type == sf::Event::KeyPressed){
-                Ground* g = gameSpace.getGround(30);
-                Tile* t = (Tile*)g;
-                t->handle();
-                gameScreen.load(sf::Vector2u(40,40));
-                calendrier.goToNextDay();
-                clock.displayDate();
-            }*/
-            // On déplace le sprite
             if (event.type == sf::Event::KeyPressed)
             {
                 if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
@@ -111,8 +110,9 @@ int main()
                 }
                 //Pour intéragir avec l'environement et labourer le champs et arroser (dépendant de l'outil actuel)
                 if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
-                    cout<<to_string(getPlayerTile(&player,&gameSpace)->interact(player.getTool()))<<endl;
+                    (getPlayerTile(&player,&gameSpace)->interact(player.getTool()));
                     gameScreen.load(sf::Vector2u(40,40));
+                    monneyDisplayer.loadMonney();
                 }
                 //Pour planter des graines
                 if(sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)){
@@ -120,7 +120,13 @@ int main()
                     gameScreen.load(sf::Vector2u(40,40));
                 }
                 if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
-                    player.setTool(wateringCan);
+                    //Changement de l'outil
+                    if(player.getTool()->toolType() == "Hoe"){
+                        player.setTool(wateringCan);
+                    }
+                    else{
+                        player.setTool(hoe);
+                    }
                 }
             }
         }
@@ -249,6 +255,7 @@ int main()
         window.draw(gameScreen);
         window.draw(*(SfmlPlayer.getSprite()));
         window.draw(clock);
+        window.draw(monneyDisplayer);
 
         window.display();
     }

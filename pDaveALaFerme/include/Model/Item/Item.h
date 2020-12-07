@@ -9,7 +9,7 @@ using std::to_string;
 class Item
 {
     private:
-        int id ;
+        int id ; //L'id d'un item
         string nom ;
 
     public:

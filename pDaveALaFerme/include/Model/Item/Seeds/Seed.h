@@ -11,9 +11,9 @@ using std::to_string;
 class Seed: public Tool
 {
     private:
-        string plantingTime ;
-        int timeToGrow ;
-        int price ;
+        string plantingTime ; //String permettant de connaitre la saison de plante
+        int timeToGrow ; //le nombre de jour nécéssaire à la finialisation de la plante
+        int price ; //Le prix d'une graine
 
         //La position dans le TILESET
         int caseX ;

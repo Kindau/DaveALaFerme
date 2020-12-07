@@ -39,8 +39,8 @@ bool SFMLMap::load(sf::Vector2u tileSize){ //Ici : tileSize est un vector qui co
             //On en déduit sa position dans la texture du tileset
 
             // /!\CE BLOCK EST AMMENÉ A CHANGER AVEC EQUIVALENT EN CARACTERE :: # = telle coordonnée dans le tileset, $ = telle coordonnée dans le tileSet
-            int caseX;
-            int caseY;
+            int caseX = 0;
+            int caseY = 0;
             Ground* g = terrain->getGround(i+j*width);
             string tileType = g->str();
             if( tileType == "#"){

@@ -10,8 +10,8 @@
 class GrownTile : public StateTile
 {
     private:
-        Tile* _tile;
-        Seed* plantedSeed;
+        Tile* _tile; //Pointeur vers la tuile principale
+        Seed* plantedSeed; //La plante plantée (donne juste le type, n'est pas une instance spécifique)
 
     public:
         // ================================================================

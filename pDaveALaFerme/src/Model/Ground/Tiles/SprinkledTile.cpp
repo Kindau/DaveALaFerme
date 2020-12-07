@@ -37,10 +37,12 @@ SprinkledTile& SprinkledTile::operator=(const SprinkledTile& rhs)
 
 void SprinkledTile::handle()
 {
+
+    //Si la plante n'est pas "finie" on retourne à l'état précédent
     if(_tile->getGrowingTime() > 0){
     _tile->setState(new PlantedTile(_tile,plantedSeed,offset+1));
     }
-    else
+    else //Si la plante est prêtre à être récoltée, on l'envoie en GrownTile
     {
         _tile->setState(new GrownTile(_tile,plantedSeed));
     }

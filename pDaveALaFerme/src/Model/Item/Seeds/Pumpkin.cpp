@@ -1,7 +1,7 @@
 #include "Model/Item/Seeds/Pumpkin.h"
 
 // CONSTRUCTEUR
-Pumpkin::Pumpkin(): Seed(8, "Pumpkin", "Winter", 4, 3, 5, 1)
+Pumpkin::Pumpkin(): Seed(8, "Pumpkin", "Autumn", 4, 3, 5, 1)
 {
     //ctor
 }

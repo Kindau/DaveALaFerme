@@ -42,7 +42,6 @@ PlantedTile& PlantedTile::operator=(const PlantedTile& rhs)
 // STATE PATTERN METHOD
 void PlantedTile::handle()
 {
-    printf("planted\n");
     _tile->setState(new SprinkledTile(_tile,plantedSeed,offset));
 
 }

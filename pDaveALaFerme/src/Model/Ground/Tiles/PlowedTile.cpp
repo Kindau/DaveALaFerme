@@ -36,8 +36,10 @@ PlowedTile& PlowedTile::operator=(const PlowedTile& rhs)
 void PlowedTile::handle()
 {
     if(_tile->getPlayer()->getSeed()->getNbSeeds() != 0){
-        _tile->getPlayer()->getSeed()->minusSeed();
-        _tile->setState(new PlantedTile(_tile,tryingSeed));
+        if(_tile->getPlayer()->getSeed()->getPlantingTime() == _tile->getCalandar()->getActualSeason()->getSeason()->str()){
+            _tile->getPlayer()->getSeed()->minusSeed();
+            _tile->setState(new PlantedTile(_tile,tryingSeed));
+        }
     }
 }
 

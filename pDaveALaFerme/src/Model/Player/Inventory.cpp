@@ -116,16 +116,15 @@ void Inventory::addSeed(Seed* seed)
     seeds.push_back(seed->clone());
 }
 
-//crée et ajoute un harvest par rapport a la seed crée, cherche d'abords si l'Harvest existe deja
-//(basé sur l'id de l'harvest qui est égal a l'id de la seed donc elle viens(par exemple carrot a un id 3 donc Harvest Carrot auras un id 3))
-void Inventory::addHarvest(const Seed* seed)
+//crée et ajoute un harvest par rapport a la seed créee, cherche d'abord si l'Harvest existe deja (basé sur l'id de l'harvest qui est égal a l'id de la seed donc elle vient(par exemple carrot a un id 3 donc Harvest Carrot auras un id 3))
+void Inventory::addHarvest(Seed* seed)
 {
     int index = getHarvestById(seed->getId());
     if(index != -1){
         harvests[index]->addOneHarvest();
         return;
     }
-    harvests.push_back(new Harvest(seed->getId(),seed->getNom(),seed->getPrice(),1));
+    harvests.push_back(new Harvest(seed->getId(),seed->getNom(),seed->getPrice()*2,1));
 }
 
 //remove toutes les Harvest de l'inventaire et cleans le vector Harvests, est appelé lorsque l'on vend notre recolte au magasin.

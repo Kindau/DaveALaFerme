@@ -13,9 +13,9 @@ using std::to_string;
 class Calendar : public ISubject
 {
     private:
-        int date;
-        int MONTH_DAY = 30;
-        Season* season;
+        int date; //Jour actuel
+        int MONTH_DAY = 30; //Constante, le nombre de jour dans un mois (pour une saison)
+        Season* season; //La saison actuelle (permet de gérer le stateSeason)
 
         //La liste des observers de calendar
         std::list<IObserver*> list_observer;
@@ -27,8 +27,8 @@ class Calendar : public ISubject
         Calendar(const Calendar& other);
         Calendar& operator=(const Calendar& other);
 
-        void goToNextDay();
-        Season* getActualSeason();
+        void goToNextDay(); //Passe au jour suivant
+        Season* getActualSeason(); //Retourne la saison actuelle
 
         string str()const;
 

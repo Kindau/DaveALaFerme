@@ -11,7 +11,7 @@ class PlowedTile : public StateTile
 {
     private:
         Tile* _tile;
-        Seed* tryingSeed;
+        Seed* tryingSeed; //Le type de graine que l'on essaie de planter (On vérifiera la saison avant de planter)
 
     public:
         // ================================================================

@@ -9,8 +9,8 @@ using std::to_string;
 class Harvest: public Item
 {
     private:
-        int price ;
-        int nbHarvest;
+        int price ; //Le prix de vente de l'item
+        int nbHarvest; //Le nombre
 
     public:
         Harvest(int id, string nom,int price, int nbHarvest=0);

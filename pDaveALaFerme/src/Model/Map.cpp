@@ -43,9 +43,11 @@ Map::Map(Calendar* cal,Player* p,string fileName):calendrier(cal),player(p){
                         //Comme push_back ajoute systématiquement en dernière position :
                         calendrier->attach((Tile*)(terrain.back()));
                         ((Tile*)(terrain.back()))->setPlayer(player);
+                        ((Tile*)(terrain.back()))->setCalandar(calendrier);
                     }
                     else if(c == '$'){
                         terrain.push_back(new Market(i,j));
+                        ((Market*)(terrain.back()))->setPlayer(player);
                     }
                     else if(c == '*'){
                         terrain.push_back(new Path(i,j));

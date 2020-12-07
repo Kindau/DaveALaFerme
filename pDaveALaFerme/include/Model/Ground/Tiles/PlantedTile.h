@@ -12,8 +12,8 @@ class PlantedTile : public StateTile
 {
     private:
         Tile* _tile;
-        Seed* plantedSeed;
-        int offset;
+        Seed* plantedSeed;//La plante plantée (donne juste le type, n'est pas une instance spécifique)
+        int offset; //Les jours déjà passés depuis que la plante a été plantée
 
 
 

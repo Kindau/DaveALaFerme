@@ -16,7 +16,9 @@ class Path : public Ground//, public IInteractive
         Ground* clone()const;
         string str()const;
 
-        virtual bool interact(Tool* t){std::cout<<"Je suis dans un path"<<std::endl;return false;}
+
+        //Car on ne peut pas interagir avec un Path
+        virtual bool interact(Tool* t){return false;}
         virtual bool interact(Seed* s){return false;}
 
     protected:

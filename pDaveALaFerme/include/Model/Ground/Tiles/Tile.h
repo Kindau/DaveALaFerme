@@ -18,13 +18,13 @@ using std::string;
 class Tile : public Ground, public IObserver //, public IInteractive
 {
     private:
-        StateTile* _state;
-        int _growingTime;
+        StateTile* _state; //Permet de savoir l'état de Tile
+        int _growingTime; //Le temps qu'il faut attendre pour qu'une plante soit poussée (en jour de jeu)
 
-        Player* player;
+        Player* player; //L'instance de player de la partie (utilie pour envoyer des infos au player (inventaire))
 
         //Pour l'observer :
-        //Calendar* calendar;
+        Calendar* calendar;
 
         //For interface
 
@@ -45,20 +45,28 @@ class Tile : public Ground, public IObserver //, public IInteractive
         virtual void update();
 
         Tile(int x =0,int y = 0, int growingTime=10);
-        int getGrowingTime()const;
-        void setGrowingTime(int time);
+        int getGrowingTime()const; //retourne le temps d'attente d'une pousse
+        void setGrowingTime(int time); //Permet de définir le temps d'attente d'une pousse
 
-        void setState(StateTile* state);
+        void setState(StateTile* state);  //Permet de changer l'état de la tuile (Arrosée, labourée, plantée, vide)
         void handle();
 
-        void setPlayer(Player* p){
+        void setPlayer(Player* p){  //Permet de définir le player
             player = p;
         }
 
-        Player* getPlayer()const{
+        Player* getPlayer()const{ //retourne le player
             return player;
         }
 
+
+        void setCalandar(Calendar* cal){ //Permet de définir le calendrier
+            calendar = cal;
+        }
+
+        Calendar* getCalandar()const{ //Retourne le calendrier
+            return calendar;
+        }
 
         Ground* clone()const;
 
@@ -67,6 +75,8 @@ class Tile : public Ground, public IObserver //, public IInteractive
         string str()const;
         string stringState()const;
 
+
+        //Permet de gérér les interactions avec l'utilisateur
         virtual bool interact(Tool* t){return _state->interact(t);}
         virtual bool interact(Seed* s){return _state->interact(s);}
 };

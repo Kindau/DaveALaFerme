@@ -10,7 +10,7 @@
 class EmptyTile : public StateTile
 {
     private:
-        Tile* _tile;
+        Tile* _tile; //Pointeur vers la tuile principale
 
     public:
         // ================================================================

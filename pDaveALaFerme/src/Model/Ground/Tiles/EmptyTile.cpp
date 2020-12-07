@@ -38,7 +38,6 @@ EmptyTile& EmptyTile::operator=(const EmptyTile& rhs)
 
 void EmptyTile::handle()
 {
-    printf("empty\n");
     _tile->setState(new PlowedTile(_tile));
 }
 
